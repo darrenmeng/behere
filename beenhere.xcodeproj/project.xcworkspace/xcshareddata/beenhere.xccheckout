@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
+	<string>748D0C99-322F-4CEC-81F0-877961C1D03C</string>
+=======
+	<string>7E1F9D8B-C9DD-4A44-B0FA-A7E2541BAAF1</string>
+>>>>>>> f14724babc02022768b8eeb801c48ebe6e58cf73
+	<key>IDESourceControlProjectName</key>
+	<string>beenhere</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3E69334CBC52BE09CEB19DC5676C7C3643B731CF</key>
+<<<<<<< HEAD
+		<string>https://github.com/darrenmeng/beenherenew.git</string>
+=======
+		<string>https://github.com/darrenmeng/beenherenew</string>
+>>>>>>> f14724babc02022768b8eeb801c48ebe6e58cf73
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>beenhere.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3E69334CBC52BE09CEB19DC5676C7C3643B731CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+<<<<<<< HEAD
+	<string>https://github.com/darrenmeng/beenherenew.git</string>
+=======
+	<string>https://github.com/darrenmeng/beenherenew</string>
+>>>>>>> f14724babc02022768b8eeb801c48ebe6e58cf73
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3E69334CBC52BE09CEB19DC5676C7C3643B731CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3E69334CBC52BE09CEB19DC5676C7C3643B731CF</string>
+			<key>IDESourceControlWCCName</key>
+<<<<<<< HEAD
+			<string>beenherenew</string>
+=======
+			<string>BeenHere</string>
+>>>>>>> f14724babc02022768b8eeb801c48ebe6e58cf73
+		</dict>
+	</array>
+</dict>
+</plist>
