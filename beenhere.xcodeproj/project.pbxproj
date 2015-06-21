@@ -29,6 +29,7 @@
 		9524980C1B342C7900513EE7 /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 952497FC1B342C7900513EE7 /* RATreeView+TableViewDelegate.m */; };
 		9524980D1B342C7900513EE7 /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952497FE1B342C7900513EE7 /* RATreeView+UIScrollView.m */; };
 		9524980E1B342C7900513EE7 /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952498011B342C7900513EE7 /* RATreeView.m */; };
+		9529FD631B3705EC0074D9B3 /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9529FD621B3705EC0074D9B3 /* beenhere.sqlite */; };
 		955B4C6C1B3475C8007AB049 /* TreeViewNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B4C6B1B3475C8007AB049 /* TreeViewNode.m */; };
 		95606DC01B332A0A00A59D2B /* QuoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95606DBF1B332A0A00A59D2B /* QuoteTableViewCell.m */; };
 		95701EE21B10C9DD00A7CB93 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95701EE11B10C9DD00A7CB93 /* camera.png */; };
@@ -41,7 +42,6 @@
 		957119591B0728CD00F35256 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 957119541B0728CD00F35256 /* FMResultSet.m */; };
 		9571195E1B073FCF00F35256 /* mydb.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571195D1B073FCF00F35256 /* mydb.m */; };
 		957204A01B19A46000189D31 /* setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572049F1B19A46000189D31 /* setting.m */; };
-		958617D31B36DAD10016C7D1 /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 958617D21B36DAD10016C7D1 /* beenhere.sqlite */; };
 		95A1D97B1B19B2BC0044CE80 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1D97A1B19B2BC0044CE80 /* TableViewController.m */; };
 		95A259C11B1F4BC7007641B0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2599D1B1F4BC7007641B0 /* AFHTTPRequestOperation.m */; };
 		95A259C21B1F4BC7007641B0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2599F1B1F4BC7007641B0 /* AFHTTPRequestOperationManager.m */; };
@@ -142,6 +142,7 @@
 		952497FF1B342C7900513EE7 /* RATreeView_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView_ClassExtension.h; sourceTree = "<group>"; };
 		952498001B342C7900513EE7 /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
 		952498011B342C7900513EE7 /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
+		9529FD621B3705EC0074D9B3 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		955B4C6A1B3475C8007AB049 /* TreeViewNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeViewNode.h; sourceTree = "<group>"; };
 		955B4C6B1B3475C8007AB049 /* TreeViewNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeViewNode.m; sourceTree = "<group>"; };
 		95606DBE1B332A0A00A59D2B /* QuoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteTableViewCell.h; sourceTree = "<group>"; };
@@ -165,7 +166,6 @@
 		9571195D1B073FCF00F35256 /* mydb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mydb.m; sourceTree = "<group>"; };
 		9572049E1B19A46000189D31 /* setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setting.h; sourceTree = "<group>"; };
 		9572049F1B19A46000189D31 /* setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setting.m; sourceTree = "<group>"; };
-		958617D21B36DAD10016C7D1 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		95A1D9791B19B2BC0044CE80 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		95A1D97A1B19B2BC0044CE80 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		95A2599C1B1F4BC7007641B0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -403,7 +403,7 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
-				958617D21B36DAD10016C7D1 /* beenhere.sqlite */,
+				9529FD621B3705EC0074D9B3 /* beenhere.sqlite */,
 				95225A751B2ED4F200BC80DF /* QuartzCore.framework */,
 				952497E31B342C7900513EE7 /* RATreeView */,
 				95225A6E1B2EBA3E00BC80DF /* UPStackMenu */,
@@ -626,7 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958617D31B36DAD10016C7D1 /* beenhere.sqlite in Resources */,
+				9529FD631B3705EC0074D9B3 /* beenhere.sqlite in Resources */,
 				95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */,
 				95B4175A1B01EB6A00EA9177 /* Main.storyboard in Resources */,
 				95B5F6F51B13054700D7A342 /* hbeenbg.png in Resources */,

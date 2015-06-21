@@ -298,15 +298,26 @@ mydb *sharedInstance;
 
 
 #pragma mark - content text
-//新增
-- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level  {
+//新增內容
+- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date {
     
    
     
-    if (![db executeUpdate:@"insert into indexcontent (id,text,level) values (?,?,?)",memberId,Contenttext,level]) {
+    if (![db executeUpdate:@"insert into indexcontent (id,text,level,date) values (?,?,?,?)",memberId,Contenttext,level,date]) {
         NSLog(@"Could not insert data:\n%@",[db lastErrorMessage]);
     };
    // [self uploadUsers:BeEMAIL];
+    
+}
+//新增回覆內容
+- (void)insertreplyMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no {
+    
+    
+    
+    if (![db executeUpdate:@"insert into indexcontent_reply (id,text,level,date,content_no) values (?,?,?,?,?)",memberId,Contenttext,level,date,content_no]) {
+        NSLog(@"Could not insert data:\n%@",[db lastErrorMessage]);
+    };
+    // [self uploadUsers:BeEMAIL];
     
 }
 //查詢主頁內容
@@ -316,7 +327,7 @@ mydb *sharedInstance;
    
     
     NSMutableArray *rows = [NSMutableArray new];
-    FMResultSet *result = [db executeQuery:@"select * from indexcontent where id=? ", beeid];
+    FMResultSet *result = [db executeQuery:@"select * from indexcontent where id=?  ", beeid];
     
     while ([result next]) {     //BOF 1 2 3 4 5 ... EOF
         [rows addObject:result.resultDictionary];

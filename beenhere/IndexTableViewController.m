@@ -65,6 +65,9 @@
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AddContent:) name:@"textcontent" object:nil];
     [self loaddata];
 }
+
+
+//從sqlite取內容資料
 -(void)loaddata{
 
     
@@ -74,32 +77,73 @@
     
     NSLog(@"content count:%lu",(unsigned long)Content.count);
    
+    if (!Content.count==0) {
+        
     
-    for (int a=0;  a==Content.count ; a++) {
-        NSLog(@"dqwdqwdqwdqwdsdfsdf;sdkf;skdfks;dfk;sdfs");
+    for (int a=0;  a<=Content.count-1 ; a++) {
+        NSLog(@"a:%d",a);
     TreeViewNode *firstLevelNode1 = [[TreeViewNode alloc]init];
         firstLevelNode1.nodeLevel = 0;
         firstLevelNode1.nodeObject = Content[a][@"text"];
         firstLevelNode1.isExpanded = YES;
         firstLevelNode1.beeid = Content[a][@"id"];
         firstLevelNode1.nodeChildren = [[self fillChildrenForNode:[NSString stringWithFormat:@"%@",Content[a][@"content_no"]]] mutableCopy];
+        firstLevelNode1.content_no=[NSString stringWithFormat:@"%@",Content[a][@"content_no"]];
         
+        if (Content[a][@"date"] != [NSNull null]) {
+      NSDate *date = [NSDate dateWithTimeIntervalSince1970:[Content[a][@"date"] integerValue]];
+        
+        firstLevelNode1.date=date;
+        }
         [nodes insertObject:firstLevelNode1 atIndex:0];
-        NSLog(@"node repeat:%@",nodes);
+      
     }
-   
+    }
     
-    NSMutableArray * i=[[NSMutableArray alloc] init];
-    i=[[mydb sharedInstance]queryreplycontent:[NSString stringWithFormat:@"%@",Content[0][@"content_no"]]];
+  
     
-    
-    NSLog(@"content_no:%@",i);
-    NSLog(@"nodearray:%@",nodes);
-    NSLog(@"%@",Content[0][@"content_no"]);
     
     [self fillDisplayArray];
     [self.tableView reloadData];
 }
+
+
+//內容子陣列
+- (NSArray *)fillChildrenForNode:(NSString *)content_no
+{
+   
+    NSMutableArray * child=[[NSMutableArray alloc] init];
+    child=[[mydb sharedInstance]queryreplycontent:content_no];
+    
+    NSMutableArray *childrenArray=[[NSMutableArray alloc] init];
+    
+    if (!child.count==0) {
+        
+    
+    for (int a=0; a <= child.count-1; a++) {
+        
+        TreeViewNode *secondLevelNode1 = [[TreeViewNode alloc]init];
+        secondLevelNode1.nodeLevel = 1;
+        secondLevelNode1.nodeObject=child[a][@"text"];
+        secondLevelNode1.content_no=child[a][@"content_no"];
+        if (child[a][@"date"] != [NSNull null]) {
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[child[a][@"date"] integerValue]];
+        
+            secondLevelNode1.date=date;
+        }
+        secondLevelNode1.beeid=child[a][@"id"];
+        [childrenArray insertObject:secondLevelNode1 atIndex:0];
+    }
+    
+    }
+    
+    return childrenArray;
+    
+    
+    
+   }
+
+//輸入文字存進陣列
 - (void)fillNodesArray:(NSDictionary *)parms
 {
     
@@ -109,9 +153,12 @@
     firstLevelNode1.nodeLevel = 0;
     firstLevelNode1.nodeObject = parms[@"text"];
     firstLevelNode1.isExpanded = YES;
-   // firstLevelNode1.nodeChildren = [[self fillChildrenForNode] mutableCopy];
-   
-     [nodes insertObject:firstLevelNode1 atIndex:0];
+    firstLevelNode1.date=[NSDate date];
+    //    firstLevelNode1.nodeChildren = [[self fillChildrenForNode] mutableCopy];
+ 
+    //    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    //    NSDate *date = [dateFormatter dateFromString:birthday];
+    [nodes insertObject:firstLevelNode1 atIndex:0];
     
     
     
@@ -119,28 +166,6 @@
     [self fillDisplayArray];
     [self.tableView reloadData];
 }
-
-- (NSArray *)fillChildrenForNode:(NSString *)content_no
-{
-   
-    NSMutableArray * child=[[NSMutableArray alloc] init];
-    child=[[mydb sharedInstance]queryreplycontent:content_no];
-    
-    NSMutableArray *childrenArray=[[NSMutableArray alloc] init];
-    
-    for (int a=0; a == child.count; a++) {
-        
-        TreeViewNode *secondLevelNode1 = [[TreeViewNode alloc]init];
-        secondLevelNode1.nodeLevel = 1;
-        secondLevelNode1.nodeObject = child[a][@"text"];
-        
-        [childrenArray insertObject:secondLevelNode1 atIndex:0];
-    }
-    
-    
-    return childrenArray;
-   }
-
 
 #pragma mark - 輸入的回覆的文字
 //回覆按鈕
@@ -158,7 +183,7 @@
 
 
 
-#pragma mark - 輸入的文字存到陣列
+#pragma mark - 輸入的文字存到陣列及sqlite
 -(void)AddContent:(NSNotification *)message{
 
     NSDictionary * dict=[[NSDictionary alloc]init];
@@ -166,12 +191,16 @@
     dict = [NSDictionary dictionaryWithObject:message.object forKey:@"text"];
     
     [self fillNodesArray:dict];
-   
+    
+    
+    //輸入時間
+   NSDate * date=[NSDate date];
+
     
     //存到SQLite
     NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
     
-     [[mydb sharedInstance]insertMemeberNo:userID andcontenttext:dict[@"text"] andlevel:@"0"];
+     [[mydb sharedInstance]insertMemeberNo:userID andcontenttext:dict[@"text"] andlevel:@"0" anddate:date];
     
     
 
@@ -202,13 +231,14 @@
     cell.treeNode = node;
     cell.contentlabel.text = node.nodeObject;
     NSLog(@"node:%@",node.nodeObject);
-   
+    NSLog(@"date:%@",node.date);
     
-    
-    NSDate * date=[NSDate date];
+
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSString *currentTime = [dateFormatter stringFromDate:date];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+    NSString *currentTime = [dateFormatter stringFromDate:node.date];
+    NSLog(@"current:%@",currentTime);
     //cell.numberLabel.text = [NSString stringWithFormat:@"Quote %ld", (long)indexPath.row];
     cell.detaillabel.text=currentTime;
     

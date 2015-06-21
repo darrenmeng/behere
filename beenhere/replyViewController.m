@@ -9,6 +9,7 @@
 #import "replyViewController.h"
 #import "TreeViewNode.h"
 #import "detailreplyTableViewCell.h"
+#import "mydb.h"
 
 #define SYSTEM_VERSION                              ([[UIDevice currentDevice] systemVersion])
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([SYSTEM_VERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -38,12 +39,15 @@
         
     NSLog(@"replyc:%@",replychildrn);
      [replylist addObject:_node];
-
     
+    NSLog(@"id:%@",_node.beeid);
     
+     NSLog(@"contentno:%@",_node.content_no);
     [self fillNodeWithChildrenArray:_node.nodeChildren];
  
     
+    
+
     
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
@@ -53,20 +57,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//This function is used to fill the array that is actually displayed on the table view
+
+
+#pragma mark - 將輸入內容存到nsstring
 - (IBAction)replyAction:(id)sender {
     
     replytext=_replytextfield.text;
-    
-    
-    
+    [self insertreplycontentToSQLite];
+}
+
+//將回覆內容存入sqllite
+-(void)insertreplycontentToSQLite{
+
+NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
+
+    [[mydb sharedInstance]insertreplyMemeberNo:userID andcontenttext:replytext andlevel:@"1" anddate:[NSDate date] andcontentno:_node .content_no];
+
 }
 
 
 
 
-
-//This function is used to add the children of the expanded node to the display array
 - (void)fillNodeWithChildrenArray:(NSArray *)childrenArray
 {
     for (TreeViewNode *node in childrenArray) {
@@ -91,24 +102,26 @@
 {
    // NSString *quote = replylist[indexPath.row];
     
-    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+    NSString *currentTime = [dateFormatter stringFromDate:_node.date];
     TreeViewNode * node=replylist[indexPath.row];
     cell.contentLabel.text =node.nodeObject;
-    //cell.quoteLabel.text = quote;
+    cell.timeLabel.text = currentTime;
 }
 
 
-- (NSArray *)fillChildrenForNode
-{
-    TreeViewNode *secondLevelNode1 = [[TreeViewNode alloc]init];
-    secondLevelNode1.nodeLevel = 1;
-    secondLevelNode1.nodeObject = [NSString stringWithFormat:@"Child node 1"];
-    
-    
-    NSArray *childrenArray = [NSArray arrayWithObjects:secondLevelNode1,  nil];
-    
-    return childrenArray;
-}
+//- (NSArray *)fillChildrenForNode
+//{
+//    TreeViewNode *secondLevelNode1 = [[TreeViewNode alloc]init];
+//    secondLevelNode1.nodeLevel = 1;
+//    secondLevelNode1.nodeObject = [NSString stringWithFormat:@"Child node 1"];
+//    
+//    
+//    NSArray *childrenArray = [NSArray arrayWithObjects:secondLevelNode1,  nil];
+//    
+//    return childrenArray;
+//}
 
 #pragma mark - UITableViewDataSouce
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

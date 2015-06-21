@@ -15,4 +15,6 @@
 @property (nonatomic, strong) id nodeObject;
 @property (nonatomic, strong) NSMutableArray *nodeChildren;
 @property (nonatomic, strong) NSString* beeid;
+@property (nonatomic, strong) NSDate * date;
+@property (nonatomic, strong) NSString * content_no;
 @end
