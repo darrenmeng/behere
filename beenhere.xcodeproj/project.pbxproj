@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */; };
 		95016F981B25A50F00BD44C0 /* tool2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F971B25A50F00BD44C0 /* tool2.png */; };
 		95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F991B25A7A700BD44C0 /* tool4.png */; };
 		95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F9A1B25A7A700BD44C0 /* tool3.png */; };
@@ -101,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleMap.storyboard; sourceTree = "<group>"; };
 		95016F971B25A50F00BD44C0 /* tool2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool2.png; sourceTree = "<group>"; };
 		95016F991B25A7A700BD44C0 /* tool4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool4.png; sourceTree = "<group>"; };
 		95016F9A1B25A7A700BD44C0 /* tool3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool3.png; sourceTree = "<group>"; };
@@ -275,6 +277,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69657B6E1B37F0EE0060FB67 /* AppleMap */ = {
+			isa = PBXGroup;
+			children = (
+				69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */,
+			);
+			name = AppleMap;
+			sourceTree = "<group>";
+		};
 		95225A6E1B2EBA3E00BC80DF /* UPStackMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +413,7 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
+				69657B6E1B37F0EE0060FB67 /* AppleMap */,
 				9529FD621B3705EC0074D9B3 /* beenhere.sqlite */,
 				95225A751B2ED4F200BC80DF /* QuartzCore.framework */,
 				952497E31B342C7900513EE7 /* RATreeView */,
@@ -636,6 +647,7 @@
 				95701EEC1B10DF2700A7CB93 /* camera1.png in Resources */,
 				95B5F6F11B12FA5200D7A342 /* Oval 1.png in Resources */,
 				95B5F6FD1B130B7B00D7A342 /* beenherebg.png in Resources */,
+				69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */,
 				95B5F6F31B1303B000D7A342 /* welcome.jpg in Resources */,
 				951DA4181B1EFE9D00C7577A /* login.png in Resources */,
 				95B5F7291B131E3C00D7A342 /* ContextMenuCell.xib in Resources */,
