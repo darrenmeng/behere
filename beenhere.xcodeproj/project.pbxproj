@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 694683351B38061E00ADBAF8 /* AppleMapViewController.m */; };
+		694683381B380BDE00ADBAF8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683371B380BDE00ADBAF8 /* MapKit.framework */; };
+		6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683391B380BE800ADBAF8 /* CoreLocation.framework */; };
 		69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */; };
 		95016F981B25A50F00BD44C0 /* tool2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F971B25A50F00BD44C0 /* tool2.png */; };
 		95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F991B25A7A700BD44C0 /* tool4.png */; };
@@ -102,6 +105,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		694683341B38061E00ADBAF8 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
+		694683351B38061E00ADBAF8 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
+		694683371B380BDE00ADBAF8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		694683391B380BE800ADBAF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleMap.storyboard; sourceTree = "<group>"; };
 		95016F971B25A50F00BD44C0 /* tool2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool2.png; sourceTree = "<group>"; };
 		95016F991B25A7A700BD44C0 /* tool4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool4.png; sourceTree = "<group>"; };
@@ -262,6 +269,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */,
+				694683381B380BDE00ADBAF8 /* MapKit.framework in Frameworks */,
 				95225A761B2ED4F200BC80DF /* QuartzCore.framework in Frameworks */,
 				95F667161B08756600A78D69 /* libsqlite3.dylib in Frameworks */,
 			);
@@ -281,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */,
+				694683341B38061E00ADBAF8 /* AppleMapViewController.h */,
+				694683351B38061E00ADBAF8 /* AppleMapViewController.m */,
 			);
 			name = AppleMap;
 			sourceTree = "<group>";
@@ -413,6 +424,8 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
+				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
+				694683371B380BDE00ADBAF8 /* MapKit.framework */,
 				69657B6E1B37F0EE0060FB67 /* AppleMap */,
 				9529FD621B3705EC0074D9B3 /* beenhere.sqlite */,
 				95225A751B2ED4F200BC80DF /* QuartzCore.framework */,
@@ -700,6 +713,7 @@
 				95A259CB1B1F4BC7007641B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				957204A01B19A46000189D31 /* setting.m in Sources */,
 				95B417571B01EB6A00EA9177 /* ViewController.m in Sources */,
+				694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */,
 				95B417541B01EB6A00EA9177 /* AppDelegate.m in Sources */,
 				95A259D01B1F4BC7007641B0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				95E3C5E41B2CA0B000071387 /* StoreInfo.m in Sources */,
