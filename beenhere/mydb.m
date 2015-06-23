@@ -299,7 +299,7 @@ mydb *sharedInstance;
 
 #pragma mark - content text
 //新增內容
-- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date {
+- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no{
     
    
     
@@ -307,6 +307,9 @@ mydb *sharedInstance;
         NSLog(@"Could not insert data:\n%@",[db lastErrorMessage]);
     };
    // [self uploadUsers:BeEMAIL];
+    
+      NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", memberId, @"id", Contenttext, @"text", @"1", @"level",date,@"date",nil];
+    
     
 }
 //新增回覆內容
@@ -362,6 +365,162 @@ mydb *sharedInstance;
 }
 
 
+#pragma mark-remote insert content
+//遠端insert content
+-(void)insertcontentremote:(NSDictionary *)params{
+
+
+
+    //設定要POST的鍵值
+    
+    NSLog(@"params:%@",params);
+    
+    NSLog(@"telephone:%@",params[@"userID"]);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    //以POST的方式request並
+    [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+        NSLog(@"apiResponse:%@",apiResponse);
+        // 取的signIn的key值，並輸出
+        NSString *result = [apiResponse objectForKey:@"insertcontent"];
+        NSLog(@"result:%@",result);
+        
+        //   判斷signUp的key值是否等於success
+        if ([result isEqualToString:@"success"]) {
+            
+            //存入mysql後執行搜尋content_no
+             [self SearchIDcontent:params[@"userID"] ];
+            
+            NSLog(@"success");
+        }else {
+            
+            NSLog(@"no suceess");
+            
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+        
+        
+        
+        
+        
+    }];
+    
+}
+
+
+//serach content_no
+-(void)SearchIDcontent:(NSString *)beid{
+    
+    
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"searchcontent",@"cmd", beid, @"userID",nil];
+    
+    
+    NSLog(@"params serach content:%@",params);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    //以POST的方式request並
+    
+    [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+        NSLog(@"apiResponse----:%@",apiResponse);
+        // 取的signIn的key值，並輸出
+        NSString *result = [apiResponse objectForKey:@"searchcontentresult"];
+        NSLog(@"upid result:%@",result);
+    
+        //   判斷signUp的key值是否等於success
+        if ([result isEqualToString:@"success"]) {
+              NSDictionary *data = [apiResponse objectForKey:@"searchcontent"];
+           
+            
+            NSLog(@"success");
+//            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//            [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+//            NSDate *date = [dateFormatter dateFromString:birthday];
+            //存到SQLITE
+            [self insertMemeberNo:data[@"id"] andcontenttext:data[@"text"] andlevel:@"0" anddate:data[@"date"]  andcontentno:data[@"content_no"]];
+            
+        }else {
+            
+           
+            NSLog(@"up no suceess");
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+    }];
+    
+    
+    
+    
+    
+}
+
+
+-(void)uploadUsersContent:(NSString *)beeid{
+
+
+
+     NSDictionary *params = [self queryindexcontent:beeid][0];
+    
+    NSLog(@"params:%@",params);
+    
+    NSLog(@"telephone:%@",params[@"telephone"]);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    //以POST的方式request並
+    [manager POST:@"http://localhost:8888/beenhere/api.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+        NSLog(@"apiResponse:%@",apiResponse);
+        // 取的signIn的key值，並輸出
+        NSString *result = [apiResponse objectForKey:@"signIn"];
+        NSLog(@"result:%@",result);
+        
+        //   判斷signUp的key值是否等於success
+        if ([result isEqualToString:@"success"]) {
+            
+            
+            
+            NSLog(@"success");
+        }else {
+            
+            NSLog(@"no suceess");
+            
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+        
+        
+    }];
+    
+    
+    
+
+}
 
 
 

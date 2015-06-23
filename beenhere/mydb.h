@@ -47,9 +47,13 @@
 - (void)insertfriendname:(NSString *)memberId friendname:(NSString *)friendname andffriendID :(NSString *)friendID;
 -(NSDictionary*)SearchRequest:(NSString *)SearchfriendID;
 //新增內容
-- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date;
+- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no;
 //新增回覆內容
 - (void)insertreplyMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no;
 -(id)queryindexcontent:(NSString *)beeid;
 -(id)queryreplycontent:(NSString *)content_id;
+
+-(void)insertcontentremote:(NSDictionary *)params;
+//serach content_no
+-(void)SearchIDcontent:(NSString *)beid;
 @end

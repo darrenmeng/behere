@@ -44,10 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
 
-    
-  // [self setupTableView];
-    
      NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"welcome",@"text", nil];
     //展開收起
       [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(expandCollapseNode:) name:@"ProjectTreeNodeButtonClicked" object:nil];
@@ -61,7 +59,8 @@
     [self fillNodesArray:params];
     [self fillDisplayArray];
   
-  //  Content=[StoreInfo shareInstance].ContentList;
+    
+
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AddContent:) name:@"textcontent" object:nil];
     [self loaddata];
 }
@@ -75,13 +74,15 @@
    Content=[[mydb sharedInstance]queryindexcontent:userID ];
 
     
-    NSLog(@"content count:%lu",(unsigned long)Content.count);
    
+    NSLog(@"contemt:%@",Content);
+    
+    
     if (!Content.count==0) {
         
     
     for (int a=0;  a<=Content.count-1 ; a++) {
-        NSLog(@"a:%d",a);
+       
     TreeViewNode *firstLevelNode1 = [[TreeViewNode alloc]init];
         firstLevelNode1.nodeLevel = 0;
         firstLevelNode1.nodeObject = Content[a][@"text"];
@@ -183,7 +184,7 @@
 
 
 
-#pragma mark - 輸入的文字存到陣列及sqlite
+#pragma mark - 輸入的文字存到陣列及mysql
 -(void)AddContent:(NSNotification *)message{
 
     NSDictionary * dict=[[NSDictionary alloc]init];
@@ -192,18 +193,48 @@
     
     [self fillNodesArray:dict];
     
-    
+    NSString * text=message.object;
     //輸入時間
-   NSDate * date=[NSDate date];
-
+    NSDate * date=[NSDate date];
+    
+    
+    NSDate *now = [NSDate date];
+    NSTimeInterval interval = [now timeIntervalSince1970];
+//    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+   // NSDate *theDate = [[NSDate alloc]initWithTimeIntervalSince1970:date];
+    
     
     //存到SQLite
     NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
     
-     [[mydb sharedInstance]insertMemeberNo:userID andcontenttext:dict[@"text"] andlevel:@"0" anddate:date];
+//    [[mydb sharedInstance]insertMemeberNo:userID andcontenttext:dict[@"text"] andlevel:@"0" anddate:date andcontentno:];
     
     
-
+    
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_TW"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale = enUSPOSIXLocale;
+    formatter.dateFormat = @"YYYY-MM-dd hh:mm";
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
+    
+    
+      NSString * datetime  =[formatter stringFromDate:date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    dateFormatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
+               [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+                NSDate *Datetime = [dateFormatter dateFromString:datetime];
+    NSLog(@"time:%@,todaytime:%@",datetime,Datetime);
+    
+    
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", userID, @"userID", text, @"text", date, @"date",@"0",@"level",nil];
+    
+    [[mydb sharedInstance]insertcontentremote:params ];
+    
     [self.tableView reloadData];
     
 }
@@ -230,15 +261,14 @@
     TreeViewNode *node = [self.displayArray objectAtIndex:indexPath.row];
     cell.treeNode = node;
     cell.contentlabel.text = node.nodeObject;
-    NSLog(@"node:%@",node.nodeObject);
-    NSLog(@"date:%@",node.date);
+
     
 
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
     NSString *currentTime = [dateFormatter stringFromDate:node.date];
-    NSLog(@"current:%@",currentTime);
+    
     //cell.numberLabel.text = [NSString stringWithFormat:@"Quote %ld", (long)indexPath.row];
     cell.detaillabel.text=currentTime;
     
@@ -312,13 +342,7 @@
    
   
     
-    
-    
-   
-    
-    
-    
-    
+  
     
     
     return cell;
