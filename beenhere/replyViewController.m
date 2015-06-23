@@ -66,11 +66,27 @@
     [self insertreplycontentToSQLite];
 }
 
-//將回覆內容存入sqllite
+//將回覆內容存入mysql及sqllite
 -(void)insertreplycontentToSQLite{
 
 NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
 
+    
+    //取出當前時間 及時區的轉換
+    NSDate * new = [NSDate date];
+    NSTimeInterval timeZoneOffset = [[NSTimeZone systemTimeZone] secondsFromGMTForDate:new];
+    NSDate *localDate = [new dateByAddingTimeInterval:timeZoneOffset];
+    
+    
+      NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontentreply",@"cmd", userID, @"userID", replytext, @"text", localDate, @"date",@"1",@"level",_node .content_no,@"content_no",nil];
+    
+    
+    
+    //存到mysql
+    [[mydb sharedInstance]insertcontentreplyremote:params ];
+
+    
+    //存入sqlite
     [[mydb sharedInstance]insertreplyMemeberNo:userID andcontenttext:replytext andlevel:@"1" anddate:[NSDate date] andcontentno:_node .content_no];
 
 }

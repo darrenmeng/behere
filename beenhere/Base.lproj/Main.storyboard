@@ -264,11 +264,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BeenHere" id="rnn-D4-PQp">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="KJL-NG-dN6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4E6-a7-VpL">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="KJL-NG-dN6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4E6-a7-VpL">
+                                <rect key="frame" x="16" y="-10" width="56" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="1" image="system_users.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -345,7 +345,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="36w-U9-IFc" id="Ppi-Hc-jim">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddToFavouritesIcn" translatesAutoresizingMaskIntoConstraints="NO" id="woe-3S-fEJ">
+                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="system_user_picture.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="woe-3S-fEJ">
                                             <rect key="frame" x="8" y="2" width="61" height="56.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="56.5" id="4UG-zO-vuN"/>
@@ -377,6 +377,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwN-n2-Sas">
                                             <rect key="frame" x="537" y="40" width="30" height="30"/>
                                             <state key="normal" title="回覆">
+                                                <color key="titleColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -913,6 +914,24 @@
             </objects>
             <point key="canvasLocation" x="4623" y="-31"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="kIQ-xF-QD6">
+            <objects>
+                <viewController id="xvM-dF-QZL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OkZ-OL-Vuy"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTp-Fk-8GI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="je3-cz-JOU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0m-WU-UGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5006" y="635"/>
+        </scene>
         <!--Reply View Controller-->
         <scene sceneID="LZy-qG-eTm">
             <objects>
@@ -954,11 +973,11 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-R2-dV6">
                                                     <rect key="frame" x="100" y="8" width="458" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AddToFavouritesIcn" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-82-VlH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="system_user_picture.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-82-VlH">
                                                     <rect key="frame" x="8" y="0.0" width="78" height="62.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="wd2-vq-uxo"/>
@@ -1033,6 +1052,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="0.094117647060000004" green="0.71372549019999998" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="xvM-dF-QZL" kind="show" id="94c-Bt-I31"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1047,7 +1069,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Leg-38-Zkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4356" y="647"/>
+            <point key="canvasLocation" x="4240" y="635"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Is3-st-0xB">
@@ -1075,11 +1097,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddToFavouritesIcn" width="32" height="32"/>
         <image name="Oval 1.png" width="179" height="179"/>
         <image name="beenherebg.png" width="350" height="600"/>
         <image name="buttonbackground.png" width="250" height="50"/>
         <image name="login.png" width="250" height="50"/>
+        <image name="system_user_picture.jpg" width="96" height="96"/>
+        <image name="system_users.png" width="45" height="45"/>
         <image name="tool3.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

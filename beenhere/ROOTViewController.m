@@ -444,7 +444,7 @@ friendTableViewController * frinedview;
     //設定要POST的鍵值
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"findRequest",@"cmd", SearchfriendID, @"userID", nil];
     
-    NSLog(@"par:%@",params);
+   
     
     //產生控制request的物件
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -558,18 +558,8 @@ friendTableViewController * frinedview;
 
 - (void)stackMenu:(UPStackMenu *)menu didTouchItem:(UPStackMenuItem *)item atIndex:(NSUInteger)index
 {
-//    NSString *message = [NSString stringWithFormat:@"Item touched : %@", item.title];
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message
-//                                                    message:nil
-//                                                   delegate:nil
-//                                          cancelButtonTitle:@"Ok"
-//                                          otherButtonTitles:nil];
-//    [alert show];
-    
-   
-    
- 
-   
+
+  
     switch (index) {
         case 0:
            _Textview.hidden=NO;

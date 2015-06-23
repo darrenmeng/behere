@@ -45,6 +45,10 @@
 		957119591B0728CD00F35256 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 957119541B0728CD00F35256 /* FMResultSet.m */; };
 		9571195E1B073FCF00F35256 /* mydb.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571195D1B073FCF00F35256 /* mydb.m */; };
 		957204A01B19A46000189D31 /* setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572049F1B19A46000189D31 /* setting.m */; };
+		9599243E1B39A84E00A70E50 /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9599243D1B39A84E00A70E50 /* beenhere.sqlite */; };
+		959924401B39D59300A70E50 /* gnome_system_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 9599243F1B39D59300A70E50 /* gnome_system_users.png */; };
+		959924421B39D6C600A70E50 /* system_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 959924411B39D6C600A70E50 /* system_users.png */; };
+		959924441B39D9F300A70E50 /* system_user_picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959924431B39D9F300A70E50 /* system_user_picture.jpg */; };
 		95A1D97B1B19B2BC0044CE80 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A1D97A1B19B2BC0044CE80 /* TableViewController.m */; };
 		95A259C11B1F4BC7007641B0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2599D1B1F4BC7007641B0 /* AFHTTPRequestOperation.m */; };
 		95A259C21B1F4BC7007641B0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2599F1B1F4BC7007641B0 /* AFHTTPRequestOperationManager.m */; };
@@ -173,7 +177,10 @@
 		9571195D1B073FCF00F35256 /* mydb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mydb.m; sourceTree = "<group>"; };
 		9572049E1B19A46000189D31 /* setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setting.h; sourceTree = "<group>"; };
 		9572049F1B19A46000189D31 /* setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setting.m; sourceTree = "<group>"; };
-		959C60FC1B3826EE0031D171 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
+		9599243D1B39A84E00A70E50 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
+		9599243F1B39D59300A70E50 /* gnome_system_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_system_users.png; sourceTree = "<group>"; };
+		959924411B39D6C600A70E50 /* system_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_users.png; sourceTree = "<group>"; };
+		959924431B39D9F300A70E50 /* system_user_picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = system_user_picture.jpg; sourceTree = "<group>"; };
 		95A1D9791B19B2BC0044CE80 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		95A1D97A1B19B2BC0044CE80 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		95A2599C1B1F4BC7007641B0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -423,7 +430,7 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
-				959C60FC1B3826EE0031D171 /* beenhere.sqlite */,
+				9599243D1B39A84E00A70E50 /* beenhere.sqlite */,
 				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
 				694683371B380BDE00ADBAF8 /* MapKit.framework */,
 				69657B6E1B37F0EE0060FB67 /* AppleMap */,
@@ -460,6 +467,8 @@
 				95606DBF1B332A0A00A59D2B /* QuoteTableViewCell.m */,
 				95B9A8C81B35D51300307AEC /* detailreplyTableViewCell.h */,
 				95B9A8C91B35D51300307AEC /* detailreplyTableViewCell.m */,
+				9599243F1B39D59300A70E50 /* gnome_system_users.png */,
+				959924411B39D6C600A70E50 /* system_users.png */,
 				95B5F6EC1B12EE9A00D7A342 /* View */,
 				95701EEB1B10DF2700A7CB93 /* camera1.png */,
 				95701EE11B10C9DD00A7CB93 /* camera.png */,
@@ -472,6 +481,7 @@
 				95016F9A1B25A7A700BD44C0 /* tool3.png */,
 				95E3C5E21B2CA0B000071387 /* StoreInfo.h */,
 				95E3C5E31B2CA0B000071387 /* StoreInfo.m */,
+				959924431B39D9F300A70E50 /* system_user_picture.jpg */,
 				9571195C1B073FCF00F35256 /* mydb.h */,
 				9571195D1B073FCF00F35256 /* mydb.m */,
 				95C6F53E1B21A86500D5DA05 /* SERVERCLASS.h */,
@@ -650,10 +660,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */,
+				9599243E1B39A84E00A70E50 /* beenhere.sqlite in Resources */,
 				95B4175A1B01EB6A00EA9177 /* Main.storyboard in Resources */,
 				95B5F6F51B13054700D7A342 /* hbeenbg.png in Resources */,
 				95B4175F1B01EB6A00EA9177 /* LaunchScreen.xib in Resources */,
+				959924421B39D6C600A70E50 /* system_users.png in Resources */,
 				95B4175C1B01EB6A00EA9177 /* Images.xcassets in Resources */,
+				959924441B39D9F300A70E50 /* system_user_picture.jpg in Resources */,
+				959924401B39D59300A70E50 /* gnome_system_users.png in Resources */,
 				95B5F6FB1B13090900D7A342 /* beenhbg.png in Resources */,
 				95701EEC1B10DF2700A7CB93 /* camera1.png in Resources */,
 				95B5F6F11B12FA5200D7A342 /* Oval 1.png in Resources */,
