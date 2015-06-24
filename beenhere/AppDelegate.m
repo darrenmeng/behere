@@ -25,7 +25,7 @@
 }
 
 
-- (NSString *)GetDocumenFilePath:(NSString *)filename
+- (NSString *)GetDocumentFilePath:(NSString *)filename
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath = [paths firstObject];
@@ -37,19 +37,23 @@
 -(void)copyDBtoDocumentifNeeded{
     
     //可讀寫 db:在document 內的實際資料
-    NSString *dbPath=[self GetDocumenFilePath:@"beenhere.sqlite"];
+    NSString *dbPath=[self GetDocumentFilePath:@"beenhere.sqlite"];
+    NSString *pinDBPath=[self GetDocumentFilePath:@"pin_V1_20150624.sqlite"];
     
     //發佈安裝時,再套件 bundle的原始db(只可讀取)
     NSString *defaultDBPath =[self GetBundleFilePath:@"beenhere.sqlite" ];
+    NSString *defaultPinDBPath =[self GetBundleFilePath:@"pin_V1_20150624.sqlite" ];
     
     
-     NSLog(@"\ndb:%@\ndefaltDB:%@",dbPath,defaultDBPath);
+    NSLog(@"\ndb:%@\ndefaltDB:%@",dbPath,defaultDBPath);
     
     NSFileManager *fileManager =[NSFileManager defaultManager];
-    BOOL success;
-    NSError *error;
+    BOOL success, isPinDBPathOK;
+    NSError *error, *pinDBPathError;
     
     success=[fileManager fileExistsAtPath:dbPath ];
+    isPinDBPathOK=[fileManager fileExistsAtPath:pinDBPath ];
+
     
     if (!success) {
         //copy
@@ -61,7 +65,17 @@
     }else{
         //處理db/table資料結構
         
+    }
+    
+    if (!isPinDBPathOK) {
+        //copy
+        isPinDBPathOK=[fileManager copyItemAtPath:defaultPinDBPath toPath:pinDBPath error:&pinDBPathError];
+        if (!isPinDBPathOK) {
+            NSLog(@"pinDBPathError:%@",[pinDBPathError localizedDescription]);
+        }
         
+    }else{
+        //處理db/table資料結構
         
     }
     

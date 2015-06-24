@@ -7,7 +7,7 @@
 //
 
 #import "AppleMapViewController.h"
-
+#import "PinDAO.h"
 @interface AppleMapViewController ()
 
 @end
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PinDAO *pinDAO = [[PinDAO alloc] init];
+    NSMutableArray *rows = [pinDAO getAllPin];
+    NSLog(@"rows= %@", rows);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690D6C0C1B394EDD00DA83E6 /* DatabaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C0B1B394EDD00DA83E6 /* DatabaseConnection.m */; };
+		690D6C0F1B394EFA00DA83E6 /* PinDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C0E1B394EFA00DA83E6 /* PinDAO.m */; };
+		690D6C141B3954FD00DA83E6 /* PinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C131B3954FD00DA83E6 /* PinTableViewController.m */; };
+		690D6C1A1B396FCB00DA83E6 /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 690D6C191B396FCB00DA83E6 /* beenhere.sqlite */; };
 		694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 694683351B38061E00ADBAF8 /* AppleMapViewController.m */; };
 		694683381B380BDE00ADBAF8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683371B380BDE00ADBAF8 /* MapKit.framework */; };
 		6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683391B380BE800ADBAF8 /* CoreLocation.framework */; };
 		69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */; };
+		696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */; };
 		95016F981B25A50F00BD44C0 /* tool2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F971B25A50F00BD44C0 /* tool2.png */; };
 		95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F991B25A7A700BD44C0 /* tool4.png */; };
 		95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F9A1B25A7A700BD44C0 /* tool3.png */; };
@@ -104,11 +109,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690D6C0A1B394EDD00DA83E6 /* DatabaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseConnection.h; path = AppleMap/DatabaseConnection.h; sourceTree = "<group>"; };
+		690D6C0B1B394EDD00DA83E6 /* DatabaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseConnection.m; path = AppleMap/DatabaseConnection.m; sourceTree = "<group>"; };
+		690D6C0D1B394EFA00DA83E6 /* PinDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinDAO.h; path = AppleMap/PinDAO.h; sourceTree = "<group>"; };
+		690D6C0E1B394EFA00DA83E6 /* PinDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinDAO.m; path = AppleMap/PinDAO.m; sourceTree = "<group>"; };
+		690D6C121B3954FD00DA83E6 /* PinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinTableViewController.h; path = AppleMap/PinTableViewController.h; sourceTree = "<group>"; };
+		690D6C131B3954FD00DA83E6 /* PinTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinTableViewController.m; path = AppleMap/PinTableViewController.m; sourceTree = "<group>"; };
+		690D6C191B396FCB00DA83E6 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		694683341B38061E00ADBAF8 /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		694683351B38061E00ADBAF8 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		694683371B380BDE00ADBAF8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		694683391B380BE800ADBAF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleMap.storyboard; sourceTree = "<group>"; };
+		696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pin_V1_20150624.sqlite; sourceTree = "<group>"; };
 		95016F971B25A50F00BD44C0 /* tool2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool2.png; sourceTree = "<group>"; };
 		95016F991B25A7A700BD44C0 /* tool4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool4.png; sourceTree = "<group>"; };
 		95016F9A1B25A7A700BD44C0 /* tool3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool3.png; sourceTree = "<group>"; };
@@ -173,7 +186,6 @@
 		9571195D1B073FCF00F35256 /* mydb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mydb.m; sourceTree = "<group>"; };
 		9572049E1B19A46000189D31 /* setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setting.h; sourceTree = "<group>"; };
 		9572049F1B19A46000189D31 /* setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setting.m; sourceTree = "<group>"; };
-		959C60FC1B3826EE0031D171 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		95A1D9791B19B2BC0044CE80 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		95A1D97A1B19B2BC0044CE80 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		95A2599C1B1F4BC7007641B0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -291,6 +303,13 @@
 				69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */,
 				694683341B38061E00ADBAF8 /* AppleMapViewController.h */,
 				694683351B38061E00ADBAF8 /* AppleMapViewController.m */,
+				690D6C0A1B394EDD00DA83E6 /* DatabaseConnection.h */,
+				690D6C0B1B394EDD00DA83E6 /* DatabaseConnection.m */,
+				690D6C0D1B394EFA00DA83E6 /* PinDAO.h */,
+				690D6C0E1B394EFA00DA83E6 /* PinDAO.m */,
+				690D6C121B3954FD00DA83E6 /* PinTableViewController.h */,
+				690D6C131B3954FD00DA83E6 /* PinTableViewController.m */,
+				696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */,
 			);
 			name = AppleMap;
 			sourceTree = "<group>";
@@ -423,7 +442,7 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
-				959C60FC1B3826EE0031D171 /* beenhere.sqlite */,
+				690D6C191B396FCB00DA83E6 /* beenhere.sqlite */,
 				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
 				694683371B380BDE00ADBAF8 /* MapKit.framework */,
 				69657B6E1B37F0EE0060FB67 /* AppleMap */,
@@ -658,10 +677,12 @@
 				95701EEC1B10DF2700A7CB93 /* camera1.png in Resources */,
 				95B5F6F11B12FA5200D7A342 /* Oval 1.png in Resources */,
 				95B5F6FD1B130B7B00D7A342 /* beenherebg.png in Resources */,
+				696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */,
 				69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */,
 				95B5F6F31B1303B000D7A342 /* welcome.jpg in Resources */,
 				951DA4181B1EFE9D00C7577A /* login.png in Resources */,
 				95B5F7291B131E3C00D7A342 /* ContextMenuCell.xib in Resources */,
+				690D6C1A1B396FCB00DA83E6 /* beenhere.sqlite in Resources */,
 				95016F981B25A50F00BD44C0 /* tool2.png in Resources */,
 				95701EE21B10C9DD00A7CB93 /* camera.png in Resources */,
 				95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */,
@@ -704,6 +725,7 @@
 				957111C31B14C41E00D8A443 /* YALNavigationBar.m in Sources */,
 				95A259CC1B1F4BC7007641B0 /* UIAlertView+AFNetworking.m in Sources */,
 				95A259D11B1F4BC7007641B0 /* UIWebView+AFNetworking.m in Sources */,
+				690D6C141B3954FD00DA83E6 /* PinTableViewController.m in Sources */,
 				95A259C91B1F4BC7007641B0 /* AFURLSessionManager.m in Sources */,
 				95C6F5401B21A86500D5DA05 /* SERVERCLASS.m in Sources */,
 				95A259CE1B1F4BC7007641B0 /* UIImageView+AFNetworking.m in Sources */,
@@ -713,6 +735,7 @@
 				95B417571B01EB6A00EA9177 /* ViewController.m in Sources */,
 				694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */,
 				95B417541B01EB6A00EA9177 /* AppDelegate.m in Sources */,
+				690D6C0F1B394EFA00DA83E6 /* PinDAO.m in Sources */,
 				95A259D01B1F4BC7007641B0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				95E3C5E41B2CA0B000071387 /* StoreInfo.m in Sources */,
 				95A259C81B1F4BC7007641B0 /* AFURLResponseSerialization.m in Sources */,
@@ -737,6 +760,7 @@
 				952498041B342C7900513EE7 /* RATreeNodeCollectionController.m in Sources */,
 				955B4C6C1B3475C8007AB049 /* TreeViewNode.m in Sources */,
 				957119591B0728CD00F35256 /* FMResultSet.m in Sources */,
+				690D6C0C1B394EDD00DA83E6 /* DatabaseConnection.m in Sources */,
 				95A259D41B1F4DF9007641B0 /* MBProgressHUD.m in Sources */,
 				95225A741B2EBA3E00BC80DF /* UPStackMenuItem.m in Sources */,
 				95B417511B01EB6A00EA9177 /* main.m in Sources */,
