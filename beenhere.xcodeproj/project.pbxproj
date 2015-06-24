@@ -16,6 +16,9 @@
 		6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683391B380BE800ADBAF8 /* CoreLocation.framework */; };
 		69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */; };
 		696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */; };
+		696CC2061B3A5710005EFCD7 /* pointRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2031B3A570F005EFCD7 /* pointRed.png */; };
+		696CC2071B3A5710005EFCD7 /* pointRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2041B3A570F005EFCD7 /* pointRed@2x.png */; };
+		696CC2081B3A5710005EFCD7 /* pointRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2051B3A570F005EFCD7 /* pointRed@3x.png */; };
 		95016F981B25A50F00BD44C0 /* tool2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F971B25A50F00BD44C0 /* tool2.png */; };
 		95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F991B25A7A700BD44C0 /* tool4.png */; };
 		95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F9A1B25A7A700BD44C0 /* tool3.png */; };
@@ -126,6 +129,9 @@
 		694683391B380BE800ADBAF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleMap.storyboard; sourceTree = "<group>"; };
 		696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pin_V1_20150624.sqlite; sourceTree = "<group>"; };
+		696CC2031B3A570F005EFCD7 /* pointRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointRed.png; sourceTree = "<group>"; };
+		696CC2041B3A570F005EFCD7 /* pointRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@2x.png"; sourceTree = "<group>"; };
+		696CC2051B3A570F005EFCD7 /* pointRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@3x.png"; sourceTree = "<group>"; };
 		95016F971B25A50F00BD44C0 /* tool2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool2.png; sourceTree = "<group>"; };
 		95016F991B25A7A700BD44C0 /* tool4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool4.png; sourceTree = "<group>"; };
 		95016F9A1B25A7A700BD44C0 /* tool3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool3.png; sourceTree = "<group>"; };
@@ -317,6 +323,9 @@
 				690D6C0E1B394EFA00DA83E6 /* PinDAO.m */,
 				690D6C121B3954FD00DA83E6 /* PinTableViewController.h */,
 				690D6C131B3954FD00DA83E6 /* PinTableViewController.m */,
+				696CC2031B3A570F005EFCD7 /* pointRed.png */,
+				696CC2041B3A570F005EFCD7 /* pointRed@2x.png */,
+				696CC2051B3A570F005EFCD7 /* pointRed@3x.png */,
 				696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */,
 			);
 			name = AppleMap;
@@ -681,6 +690,7 @@
 			files = (
 				95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */,
 				9599243E1B39A84E00A70E50 /* beenhere.sqlite in Resources */,
+				696CC2081B3A5710005EFCD7 /* pointRed@3x.png in Resources */,
 				95B4175A1B01EB6A00EA9177 /* Main.storyboard in Resources */,
 				95B5F6F51B13054700D7A342 /* hbeenbg.png in Resources */,
 				95B4175F1B01EB6A00EA9177 /* LaunchScreen.xib in Resources */,
@@ -691,9 +701,11 @@
 				95B5F6FB1B13090900D7A342 /* beenhbg.png in Resources */,
 				95701EEC1B10DF2700A7CB93 /* camera1.png in Resources */,
 				95B5F6F11B12FA5200D7A342 /* Oval 1.png in Resources */,
+				696CC2061B3A5710005EFCD7 /* pointRed.png in Resources */,
 				95B5F6FD1B130B7B00D7A342 /* beenherebg.png in Resources */,
 				696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */,
 				69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */,
+				696CC2071B3A5710005EFCD7 /* pointRed@2x.png in Resources */,
 				95B5F6F31B1303B000D7A342 /* welcome.jpg in Resources */,
 				951DA4181B1EFE9D00C7577A /* login.png in Resources */,
 				95B5F7291B131E3C00D7A342 /* ContextMenuCell.xib in Resources */,

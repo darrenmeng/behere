@@ -19,15 +19,32 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g5U-fG-k5O">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acg-y0-9hq">
+                                <rect key="frame" x="266" y="527" width="69" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="qxj-Hz-QB3"/>
+                                </constraints>
+                                <state key="normal" image="BtnAdd">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPinButtonAction:" destination="wlv-CV-jgl" eventType="touchUpInside" id="caX-V8-wKJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g5U-fG-k5O" firstAttribute="leading" secondItem="Vql-20-m6W" secondAttribute="leading" id="2JA-iM-1t8"/>
                             <constraint firstItem="g5U-fG-k5O" firstAttribute="bottom" secondItem="gvn-b1-UEM" secondAttribute="top" id="7tm-PL-I5A"/>
                             <constraint firstItem="g5U-fG-k5O" firstAttribute="top" secondItem="Vql-20-m6W" secondAttribute="top" id="AAq-ea-tPC"/>
+                            <constraint firstItem="acg-y0-9hq" firstAttribute="centerX" secondItem="g5U-fG-k5O" secondAttribute="centerX" id="QYC-6u-w3P"/>
                             <constraint firstAttribute="trailing" secondItem="g5U-fG-k5O" secondAttribute="trailing" id="eMc-0n-D2J"/>
+                            <constraint firstItem="gvn-b1-UEM" firstAttribute="top" secondItem="acg-y0-9hq" secondAttribute="bottom" constant="41" id="m1s-1E-Ddn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appleMapView" destination="g5U-fG-k5O" id="aU4-2p-EZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYU-LF-OSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,4 +94,7 @@
             <point key="canvasLocation" x="-10" y="1070"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BtnAdd" width="32" height="32"/>
+    </resources>
 </document>
