@@ -12,6 +12,7 @@
 #import "TreeViewNode.h"
 #import "replyViewController.h"
 #import "mydb.h"
+#import "MBProgressHUD.h"
 @interface IndexTableViewController ()
 {
 
@@ -45,11 +46,20 @@
     [super viewDidLoad];
     
    
+  
+
 
      NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"welcome",@"text", nil];
     //展開收起
       [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(expandCollapseNode:) name:@"ProjectTreeNodeButtonClicked" object:nil];
    
+    
+    //relodata table
+      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loaddata) name:@"loaddata" object:nil];
+    
+    
+    
+    
     
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
 //    self.tableView.estimatedRowHeight = 70.0;
@@ -62,15 +72,41 @@
     
 
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AddContent:) name:@"textcontent" object:nil];
+    
+    [self initdata];
+}
+-(void)initdata{
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"connecting"];
+    
+ NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
+   [[mydb sharedInstance]querymysqlindexcontent:userID ];
+   
+    
+    
+    
     [self loaddata];
 }
+-(void)viewWillAppear:(BOOL)animated{
+
+[self loaddata];
 
 
+}
 //從sqlite取內容資料
 -(void)loaddata{
 
     
+    
+    
+    
      NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
+    
+    
+ 
+    
+    
    Content=[[mydb sharedInstance]queryindexcontent:userID ];
 
     
@@ -92,9 +128,19 @@
         firstLevelNode1.content_no=[NSString stringWithFormat:@"%@",Content[a][@"content_no"]];
         
         if (Content[a][@"date"] != [NSNull null]) {
-      NSDate *date = [NSDate dateWithTimeIntervalSince1970:[Content[a][@"date"] integerValue]];
+            //原本取sqlite的日期的方法
+//      NSDate *date = [NSDate dateWithTimeIntervalSince1970:[Content[a][@"date"] integerValue]];
         
-        firstLevelNode1.date=date;
+           
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+   
+             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss" ];
+            NSString *currentTime = [dateFormatter stringFromDate:firstLevelNode1.date];
+            NSDate *date = [dateFormatter dateFromString:Content[a][@"date"]];
+            
+            
+            firstLevelNode1.date=date;
+            NSLog(@"firstdate:%@  %@",currentTime,date);
         }
         [nodes insertObject:firstLevelNode1 atIndex:0];
       
@@ -106,6 +152,8 @@
     
     [self fillDisplayArray];
     [self.tableView reloadData];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
@@ -176,9 +224,7 @@
     
       TreeViewNode *node = [self.displayArray objectAtIndex:indexPath.row];
     NSLog(@"index:%@,row:%ld",indexPath,(long)indexPath.row);
-   //replyViewController *tvc=segue.destinationViewController;
-    
-//    tvc.replylist=[self.displayArray objectAtIndex:indexPath.row];
+   
 
 }
 
@@ -195,14 +241,8 @@
     
     NSString * text=message.object;
     //輸入時間
-    NSDate * date=[NSDate date];
-    
-    
-    NSDate *now = [NSDate date];
-    NSTimeInterval interval = [now timeIntervalSince1970];
-//    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:0];
-    
-   // NSDate *theDate = [[NSDate alloc]initWithTimeIntervalSince1970:date];
+
+
     
     
     //存到SQLite
@@ -212,26 +252,26 @@
     
     
     
-    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_TW"];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.locale = enUSPOSIXLocale;
-    formatter.dateFormat = @"YYYY-MM-dd hh:mm";
-    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
+//    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_TW"];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.locale = enUSPOSIXLocale;
+//    formatter.dateFormat = @"YYYY-MM-dd hh:mm";
+//    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+//    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
     
     
-      NSString * datetime  =[formatter stringFromDate:date];
+
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-    dateFormatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
-               [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
-                NSDate *Datetime = [dateFormatter dateFromString:datetime];
-    NSLog(@"time:%@,todaytime:%@",datetime,Datetime);
+    //取出當前時間 及時區的轉換
+    NSDate * new = [NSDate date];
+    NSTimeInterval timeZoneOffset = [[NSTimeZone systemTimeZone] secondsFromGMTForDate:new];
+    NSDate *localDate = [new dateByAddingTimeInterval:timeZoneOffset];
+  
+   
     
     
     
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", userID, @"userID", text, @"text", date, @"date",@"0",@"level",nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", userID, @"userID", text, @"text", localDate, @"date",@"0",@"level",nil];
     
     [[mydb sharedInstance]insertcontentremote:params ];
     
@@ -266,7 +306,8 @@
 
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+
+     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *currentTime = [dateFormatter stringFromDate:node.date];
     
     //cell.numberLabel.text = [NSString stringWithFormat:@"Quote %ld", (long)indexPath.row];
@@ -433,5 +474,8 @@
      
    
  }
+
+
+
 
 @end

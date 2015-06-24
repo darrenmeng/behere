@@ -12,5 +12,5 @@
 
 @property (strong, nonatomic)NSMutableArray * contentlist;
 
-
+-(void)loaddata;
 @end

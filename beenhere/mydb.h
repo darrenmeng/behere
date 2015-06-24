@@ -52,8 +52,12 @@
 - (void)insertreplyMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no;
 -(id)queryindexcontent:(NSString *)beeid;
 -(id)queryreplycontent:(NSString *)content_id;
-
+//新增發佈內容
 -(void)insertcontentremote:(NSDictionary *)params;
+//新增子回覆內容
+-(void)insertcontentreplyremote:(NSDictionary *)params;
 //serach content_no
 -(void)SearchIDcontent:(NSString *)beid;
+//mysql 查詢主頁內容
+-(void)querymysqlindexcontent:(NSString *)beeid;
 @end
