@@ -14,6 +14,7 @@
 #import "friendTableViewController.h"
 #import "StoreInfo.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CameraViewController.h"
 
 
 
@@ -24,8 +25,9 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 <
 UITableViewDelegate,
 UITableViewDataSource,
-YALContextMenuTableViewDelegate
-,UITextViewDelegate
+YALContextMenuTableViewDelegate,
+UITextViewDelegate,
+UIActionSheetDelegate
 >
 {
 friendTableViewController * frinedview;
@@ -528,6 +530,7 @@ friendTableViewController * frinedview;
 
 }
 
+
 - (void)setStackIconClosed:(BOOL)closed
 {
     UIImageView *icon = [[contentView subviews] objectAtIndex:0];
@@ -609,7 +612,37 @@ friendTableViewController * frinedview;
     
 }
 
+// 點擊大頭照跳出選項
+- (void)handleTap:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+    }
+}
+
+// 點擊大頭照更換照片
+- (IBAction)tap:(id)sender {
+    NSString *aboutString = @"更新大頭貼照";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:aboutString
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"取消"
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:@"拍照", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0 ) {
+        
+        UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+//        [self showViewController:cameraVC sender:self];
+        [self presentViewController:cameraVC animated:YES completion:nil];
+        
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 
 
-
+}
 @end
