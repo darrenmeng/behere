@@ -60,6 +60,7 @@
     PinDAO *pinDAO = [[PinDAO alloc] init];
     NSMutableArray *rows = [pinDAO getAllPin];
     NSLog(@"rows= %@", rows);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +75,8 @@
     newAnnotation.subtitle = @"change me";
     
     [self.appleMapView addAnnotation:newAnnotation];
+    
+    
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -117,8 +120,6 @@
     //    UIImageView *rightCalloutImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pointRed.png"]];
     //    rightCalloutImageView.userInteractionEnabled = true;
     //    reuseAnnotationView.rightCalloutAccessoryView = rightCalloutImageView;
-    
-    
     
     return reuseAnnotationView;
 }

@@ -635,10 +635,9 @@ friendTableViewController * frinedview;
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0 ) {
-        
-         UINavigationController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
-        [self showViewController:cameraVC sender:self];
-//        [self showDetailViewController:cameraVC sender:self];
+    
+         UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+        [self presentViewController:cameraVC animated:YES completion:NULL];
         
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -646,6 +645,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 
 
 }
+
 - (IBAction)goCamera:(id)sender {
+    UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+    [self presentViewController:cameraVC animated:YES completion:NULL];
+    
 }
 @end
