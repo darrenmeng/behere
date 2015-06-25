@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BFA752C1B3A8D6200F70A9C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA752B1B3A8D6200F70A9C /* CoreVideo.framework */; };
+		2BFA752E1B3A8D6E00F70A9C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA752D1B3A8D6E00F70A9C /* CoreMedia.framework */; };
+		2BFA75301B3A8D7D00F70A9C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA752F1B3A8D7D00F70A9C /* CoreImage.framework */; };
+		2BFA75321B3A8D8D00F70A9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA75311B3A8D8D00F70A9C /* MobileCoreServices.framework */; };
+		2BFA75341B3A8D9700F70A9C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA75331B3A8D9700F70A9C /* AssetsLibrary.framework */; };
+		2BFA75361B3A8DA000F70A9C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA75351B3A8DA000F70A9C /* AVFoundation.framework */; };
+		2BFA75391B3A8EDC00F70A9C /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA75381B3A8EDC00F70A9C /* CameraViewController.m */; };
+		2BFA753C1B3A8F7100F70A9C /* CameraAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA753B1B3A8F7100F70A9C /* CameraAppDelegate.m */; };
+		2BFA753F1B3A946800F70A9C /* camerab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA753E1B3A946800F70A9C /* camerab.png */; };
+		2BFA75411B3A947B00F70A9C /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA75401B3A947B00F70A9C /* flash.png */; };
+		2BFA75431B3A948000F70A9C /* noflash.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA75421B3A948000F70A9C /* noflash.png */; };
+		2BFA75451B3A948B00F70A9C /* changeCamerab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA75441B3A948B00F70A9C /* changeCamerab.png */; };
+		2BFA75471B3A962C00F70A9C /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA75461B3A962C00F70A9C /* album.png */; };
+		2BFA75491B3A96D600F70A9C /* changeCamerabarbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA75481B3A96D600F70A9C /* changeCamerabarbutton.png */; };
+		2BFA754B1B3A976E00F70A9C /* camerachangebb.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA754A1B3A976E00F70A9C /* camerachangebb.png */; };
+		2BFA754D1B3AB0A100F70A9C /* headphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA754C1B3AB0A100F70A9C /* headphoto.jpg */; };
 		690D6C0C1B394EDD00DA83E6 /* DatabaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C0B1B394EDD00DA83E6 /* DatabaseConnection.m */; };
 		690D6C0F1B394EFA00DA83E6 /* PinDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C0E1B394EFA00DA83E6 /* PinDAO.m */; };
 		690D6C141B3954FD00DA83E6 /* PinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D6C131B3954FD00DA83E6 /* PinTableViewController.m */; };
@@ -120,6 +136,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BFA752B1B3A8D6200F70A9C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		2BFA752D1B3A8D6E00F70A9C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		2BFA752F1B3A8D7D00F70A9C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2BFA75311B3A8D8D00F70A9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2BFA75331B3A8D9700F70A9C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		2BFA75351B3A8DA000F70A9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2BFA75371B3A8EDC00F70A9C /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../CameraViewController.h; sourceTree = "<group>"; };
+		2BFA75381B3A8EDC00F70A9C /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = ../CameraViewController.m; sourceTree = "<group>"; };
+		2BFA753A1B3A8F7100F70A9C /* CameraAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraAppDelegate.h; path = ../CameraAppDelegate.h; sourceTree = "<group>"; };
+		2BFA753B1B3A8F7100F70A9C /* CameraAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraAppDelegate.m; path = ../CameraAppDelegate.m; sourceTree = "<group>"; };
+		2BFA753E1B3A946800F70A9C /* camerab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerab.png; sourceTree = "<group>"; };
+		2BFA75401B3A947B00F70A9C /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
+		2BFA75421B3A948000F70A9C /* noflash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noflash.png; sourceTree = "<group>"; };
+		2BFA75441B3A948B00F70A9C /* changeCamerab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeCamerab.png; sourceTree = "<group>"; };
+		2BFA75461B3A962C00F70A9C /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
+		2BFA75481B3A96D600F70A9C /* changeCamerabarbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeCamerabarbutton.png; sourceTree = "<group>"; };
+		2BFA754A1B3A976E00F70A9C /* camerachangebb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerachangebb.png; sourceTree = "<group>"; };
+		2BFA754C1B3AB0A100F70A9C /* headphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headphoto.jpg; sourceTree = "<group>"; };
 		690D6C0A1B394EDD00DA83E6 /* DatabaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseConnection.h; path = AppleMap/DatabaseConnection.h; sourceTree = "<group>"; };
 		690D6C0B1B394EDD00DA83E6 /* DatabaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseConnection.m; path = AppleMap/DatabaseConnection.m; sourceTree = "<group>"; };
 		690D6C0D1B394EFA00DA83E6 /* PinDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinDAO.h; path = AppleMap/PinDAO.h; sourceTree = "<group>"; };
@@ -306,6 +340,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFA75361B3A8DA000F70A9C /* AVFoundation.framework in Frameworks */,
+				2BFA75341B3A8D9700F70A9C /* AssetsLibrary.framework in Frameworks */,
+				2BFA75321B3A8D8D00F70A9C /* MobileCoreServices.framework in Frameworks */,
+				2BFA75301B3A8D7D00F70A9C /* CoreImage.framework in Frameworks */,
+				2BFA752E1B3A8D6E00F70A9C /* CoreMedia.framework in Frameworks */,
+				2BFA752C1B3A8D6200F70A9C /* CoreVideo.framework in Frameworks */,
 				6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */,
 				694683381B380BDE00ADBAF8 /* MapKit.framework in Frameworks */,
 				95225A761B2ED4F200BC80DF /* QuartzCore.framework in Frameworks */,
@@ -323,6 +363,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BFA752A1B3A8CA100F70A9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA75351B3A8DA000F70A9C /* AVFoundation.framework */,
+				2BFA75331B3A8D9700F70A9C /* AssetsLibrary.framework */,
+				2BFA75311B3A8D8D00F70A9C /* MobileCoreServices.framework */,
+				2BFA752F1B3A8D7D00F70A9C /* CoreImage.framework */,
+				2BFA752D1B3A8D6E00F70A9C /* CoreMedia.framework */,
+				2BFA752B1B3A8D6200F70A9C /* CoreVideo.framework */,
+				95225A751B2ED4F200BC80DF /* QuartzCore.framework */,
+				694683371B380BDE00ADBAF8 /* MapKit.framework */,
+				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BFA753D1B3A944000F70A9C /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA754C1B3AB0A100F70A9C /* headphoto.jpg */,
+				2BFA754A1B3A976E00F70A9C /* camerachangebb.png */,
+				2BFA75481B3A96D600F70A9C /* changeCamerabarbutton.png */,
+				2BFA75441B3A948B00F70A9C /* changeCamerab.png */,
+				2BFA75421B3A948000F70A9C /* noflash.png */,
+				2BFA75401B3A947B00F70A9C /* flash.png */,
+				2BFA753E1B3A946800F70A9C /* camerab.png */,
+				2BFA75461B3A962C00F70A9C /* album.png */,
+			);
+			name = icon;
+			sourceTree = "<group>";
+		};
 		69657B6E1B37F0EE0060FB67 /* AppleMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,10 +551,8 @@
 			isa = PBXGroup;
 			children = (
 				9599243D1B39A84E00A70E50 /* beenhere.sqlite */,
-				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
-				694683371B380BDE00ADBAF8 /* MapKit.framework */,
+				2BFA752A1B3A8CA100F70A9C /* Frameworks */,
 				69657B6E1B37F0EE0060FB67 /* AppleMap */,
-				95225A751B2ED4F200BC80DF /* QuartzCore.framework */,
 				952497E31B342C7900513EE7 /* RATreeView */,
 				95225A6E1B2EBA3E00BC80DF /* UPStackMenu */,
 				95A2599B1B1F4BC7007641B0 /* AFNetworking */,
@@ -554,6 +623,11 @@
 				95A1D97A1B19B2BC0044CE80 /* TableViewController.m */,
 				95B5F6E91B12CED600D7A342 /* ROOTViewController.h */,
 				95B5F6EA1B12CED600D7A342 /* ROOTViewController.m */,
+				2BFA753A1B3A8F7100F70A9C /* CameraAppDelegate.h */,
+				2BFA753B1B3A8F7100F70A9C /* CameraAppDelegate.m */,
+				2BFA75371B3A8EDC00F70A9C /* CameraViewController.h */,
+				2BFA75381B3A8EDC00F70A9C /* CameraViewController.m */,
+				2BFA753D1B3A944000F70A9C /* icon */,
 				95B4175B1B01EB6A00EA9177 /* Images.xcassets */,
 				95B4175D1B01EB6A00EA9177 /* LaunchScreen.xib */,
 				95B4174E1B01EB6A00EA9177 /* Supporting Files */,
@@ -677,6 +751,7 @@
 				TargetAttributes = {
 					95B4174A1B01EB6A00EA9177 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = C9PXUJQXF3;
 					};
 					95B417631B01EB6A00EA9177 = {
 						CreatedOnToolsVersion = 6.2;
@@ -720,17 +795,25 @@
 				959924401B39D59300A70E50 /* gnome_system_users.png in Resources */,
 				95B5F6FB1B13090900D7A342 /* beenhbg.png in Resources */,
 				95701EEC1B10DF2700A7CB93 /* camera1.png in Resources */,
+				2BFA75491B3A96D600F70A9C /* changeCamerabarbutton.png in Resources */,
 				95B5F6F11B12FA5200D7A342 /* Oval 1.png in Resources */,
+				2BFA75451B3A948B00F70A9C /* changeCamerab.png in Resources */,
+				2BFA753F1B3A946800F70A9C /* camerab.png in Resources */,
+				2BFA75411B3A947B00F70A9C /* flash.png in Resources */,
 				696CC2061B3A5710005EFCD7 /* pointRed.png in Resources */,
 				95B5F6FD1B130B7B00D7A342 /* beenherebg.png in Resources */,
 				696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */,
 				69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */,
 				696CC2071B3A5710005EFCD7 /* pointRed@2x.png in Resources */,
+				2BFA754D1B3AB0A100F70A9C /* headphoto.jpg in Resources */,
 				95B5F6F31B1303B000D7A342 /* welcome.jpg in Resources */,
 				951DA4181B1EFE9D00C7577A /* login.png in Resources */,
+				2BFA75471B3A962C00F70A9C /* album.png in Resources */,
 				95B5F7291B131E3C00D7A342 /* ContextMenuCell.xib in Resources */,
 				690D6C1A1B396FCB00DA83E6 /* beenhere.sqlite in Resources */,
+				2BFA754B1B3A976E00F70A9C /* camerachangebb.png in Resources */,
 				95016F981B25A50F00BD44C0 /* tool2.png in Resources */,
+				2BFA75431B3A948000F70A9C /* noflash.png in Resources */,
 				95701EE21B10C9DD00A7CB93 /* camera.png in Resources */,
 				95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */,
 				951DA41A1B1F023B00C7577A /* buttonbackground.png in Resources */,
@@ -792,6 +875,7 @@
 				952498061B342C7900513EE7 /* RATreeNodeItem+Private.m in Sources */,
 				95C6F53D1B21950B00D5DA05 /* friendTableViewController.m in Sources */,
 				95A259C11B1F4BC7007641B0 /* AFHTTPRequestOperation.m in Sources */,
+				2BFA75391B3A8EDC00F70A9C /* CameraViewController.m in Sources */,
 				95B9A8C71B35C6D000307AEC /* replyViewController.m in Sources */,
 				952498031B342C7900513EE7 /* RATreeNode.m in Sources */,
 				95B5F7281B131E3C00D7A342 /* ContextMenuCell.m in Sources */,
@@ -818,6 +902,7 @@
 				95A259C71B1F4BC7007641B0 /* AFURLRequestSerialization.m in Sources */,
 				952498051B342C7900513EE7 /* RATreeNodeController.m in Sources */,
 				952498071B342C7900513EE7 /* RATreeNodeItem.m in Sources */,
+				2BFA753C1B3A8F7100F70A9C /* CameraAppDelegate.m in Sources */,
 				957119561B0728CD00F35256 /* FMDatabaseAdditions.m in Sources */,
 				95A259C31B1F4BC7007641B0 /* AFHTTPSessionManager.m in Sources */,
 			);
@@ -895,7 +980,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -931,7 +1016,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -943,6 +1028,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = beenhere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -953,6 +1039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = beenhere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
