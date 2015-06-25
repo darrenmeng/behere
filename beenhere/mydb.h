@@ -60,4 +60,8 @@
 -(void)SearchIDcontent:(NSString *)beid;
 //mysql 查詢主頁內容
 -(void)querymysqlindexcontent:(NSString *)beeid;
+
+
+-(void)insertcontentremotewithimage:(NSDictionary *)params;
+-(void)test:(NSString*)beeid;
 @end

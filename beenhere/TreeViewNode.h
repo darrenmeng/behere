@@ -17,4 +17,6 @@
 @property (nonatomic, strong) NSString* beeid;
 @property (nonatomic, strong) NSDate * date;
 @property (nonatomic, strong) NSString * content_no;
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSData * image;
 @end

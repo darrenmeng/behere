@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *detaillabel;
 @property (retain, nonatomic) IBOutlet UIButton *cellButton;
 @property (weak, nonatomic) IBOutlet UIImageView *userimage;
+@property (weak, nonatomic) IBOutlet UIImageView *Userimage;
+@property (weak, nonatomic) IBOutlet UIImageView *cellimage;
 
 
 @property (nonatomic) BOOL isExpanded;

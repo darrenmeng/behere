@@ -13,12 +13,13 @@
 #import "replyViewController.h"
 #import "mydb.h"
 #import "MBProgressHUD.h"
+#import "AFNetworking.h"
 @interface IndexTableViewController ()
 {
 
     NSMutableArray* Content;
     NSDictionary * contentkey;
-    
+    NSData * imagedata;
     NSUInteger indentation;
     NSMutableArray *nodes;
     
@@ -29,6 +30,7 @@
 
 @property (nonatomic, strong) QuoteTableViewCell *prototypeCell;
 @property (nonatomic, retain) NSMutableArray *displayArray;
+
 
 
 @end
@@ -81,7 +83,10 @@
     [hud setLabelText:@"connecting"];
     
  NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
-   [[mydb sharedInstance]querymysqlindexcontent:userID ];
+    
+    //[self test:userID];
+    [[mydb sharedInstance]test:userID ];
+   //[[mydb sharedInstance]querymysqlindexcontent:userID ];
    
     
     
@@ -104,9 +109,9 @@
      NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
     
     
- 
+    Content=[[NSMutableArray alloc] init];
     
-    
+    nodes=[[NSMutableArray alloc]init ];
    Content=[[mydb sharedInstance]queryindexcontent:userID ];
 
     
@@ -119,11 +124,19 @@
     
     for (int a=0;  a<=Content.count-1 ; a++) {
        
+        NSLog(@" image===%@" ,Content[a][@"image"]);
+        
     TreeViewNode *firstLevelNode1 = [[TreeViewNode alloc]init];
         firstLevelNode1.nodeLevel = 0;
         firstLevelNode1.nodeObject = Content[a][@"text"];
         firstLevelNode1.isExpanded = YES;
         firstLevelNode1.beeid = Content[a][@"id"];
+        if (Content[a][@"image"] !=[NSNull null]) {
+            firstLevelNode1.image = Content[a][@"image"];
+        }else{
+        firstLevelNode1.image = nil;
+        }
+        
         firstLevelNode1.nodeChildren = [[self fillChildrenForNode:[NSString stringWithFormat:@"%@",Content[a][@"content_no"]]] mutableCopy];
         firstLevelNode1.content_no=[NSString stringWithFormat:@"%@",Content[a][@"content_no"]];
         
@@ -176,7 +189,11 @@
         secondLevelNode1.nodeObject=child[a][@"text"];
         secondLevelNode1.content_no=child[a][@"content_no"];
         if (child[a][@"date"] != [NSNull null]) {
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[child[a][@"date"] integerValue]];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+            
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss" ];
+         
+            NSDate *date = [dateFormatter dateFromString:Content[a][@"date"]];
         
             secondLevelNode1.date=date;
         }
@@ -233,6 +250,10 @@
 #pragma mark - 輸入的文字存到陣列及mysql
 -(void)AddContent:(NSNotification *)message{
 
+    
+   
+    
+    
     NSDictionary * dict=[[NSDictionary alloc]init];
     
     dict = [NSDictionary dictionaryWithObject:message.object forKey:@"text"];
@@ -248,16 +269,7 @@
     //存到SQLite
     NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"];
     
-//    [[mydb sharedInstance]insertMemeberNo:userID andcontenttext:dict[@"text"] andlevel:@"0" anddate:date andcontentno:];
-    
-    
-    
-//    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_TW"];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.locale = enUSPOSIXLocale;
-//    formatter.dateFormat = @"YYYY-MM-dd hh:mm";
-//    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-//    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*3600];
+
     
     
 
@@ -269,11 +281,16 @@
   
    
     
+      NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"image.jpg"],0.5);
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", userID, @"userID", text, @"text", localDate, @"date",@"0",@"level",imageData,@"image",nil];
     
     
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"insertcontent",@"cmd", userID, @"userID", text, @"text", localDate, @"date",@"0",@"level",nil];
     
-    [[mydb sharedInstance]insertcontentremote:params ];
+    
+    [[mydb sharedInstance]insertcontentremotewithimage:params];
+    
+   // [[mydb sharedInstance]insertcontentremote:params ];
     
     [self.tableView reloadData];
     
@@ -301,9 +318,16 @@
     TreeViewNode *node = [self.displayArray objectAtIndex:indexPath.row];
     cell.treeNode = node;
     cell.contentlabel.text = node.nodeObject;
-
     
+    NSLog(@"node.image:%@",node.image);
+    if (node.image!=nil) {
+        
+        UIImage *downloadedImage = [[UIImage alloc] initWithData:node.image];
 
+     cell.cellimage.image = downloadedImage ;
+    }
+    //cell.cellimage.image=[UIImage imageNamed:@"image.jpg"];
+   
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 
@@ -383,7 +407,9 @@
    
   
     
-  
+//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+//    imgView.image = [UIImage imageNamed:@"cameral.png"];
+//    cell.imageView.image = imgView.image;
     
     
     return cell;
@@ -411,6 +437,7 @@
             [self fillNodeWithChildrenArray:node.nodeChildren];
         }
     }
+    [self.tableView reloadData];
 }
 
 //This function is used to add the children of the expanded node to the display array
@@ -476,6 +503,85 @@
  }
 
 
-
+#pragma mark - test
+-(void)test:(NSString*)beeid{
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"queryindexcontent",@"cmd", beeid, @"userID", nil];
+    
+    //產生hud物件，並設定其顯示文字
+    
+    
+    NSLog(@"params:%@",params);
+    
+    NSLog(@"id=========:%@",params[@"userID"]);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    //      manager.responseSerializer = [AFImageResponseSerializer serializer];
+    // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    // manager.responseSerializer.acceptableContentTypes =     [NSSet setWithObjects:@"*/*", nil];
+    //以POST的方式request並
+    
+    
+    
+    [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        
+        NSLog(@" responseObject-------------:%@", responseObject);
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+        ////
+        //        NSString *result = [apiResponse objectForKey:@"queryindexcontentresult"];
+        //        NSLog(@"api:%@",apiResponse);
+        //        NSLog(@"result:%@",result);
+        
+//        NSData *imageData =[apiResponse objectForKey:@"queryindexcontent"];
+        imagedata = [[NSData alloc]initWithBase64EncodedString:[apiResponse objectForKey:@"queryindexcontent"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        NSLog(@"imagedata:%@",imagedata);
+        
+        //   判斷signUp的key值是否等於success
+        //        if ([result isEqualToString:@"success"]) {
+        //
+        //
+        //            NSMutableArray *data = [apiResponse objectForKey:@"queryindexcontent"];
+        //
+        //            NSLog(@"index content:%@",data);
+        //
+        //            for (NSDictionary *dict in data) {
+        //
+        //
+        //                NSLog(@"DICT-content_no:%@",dict[@"content_no"]);
+        //
+        //                [self insertMysqlContent:dict];
+        //
+        //
+        //                [self Searchcontentno:dict[@"content_no"]];
+        //
+        //            }
+        //
+        //
+        //            NSLog(@"success");
+        //        }else {
+        //
+        //            NSLog(@"no suceess");
+        //            
+        //        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+}
 
 @end

@@ -34,9 +34,10 @@
     
     [self.contentView updateConstraintsIfNeeded];
     [self.contentView layoutIfNeeded];
-    
+    //  self.imageView.frame = CGRectMake(0,0,32,32);
    self.contentlabel.preferredMaxLayoutWidth = CGRectGetWidth(self.contentlabel.frame);
 }
+
 - (void)drawRect:(CGRect)rect
 {
 //    CGRect cellFrame = self.contentlabel.frame;

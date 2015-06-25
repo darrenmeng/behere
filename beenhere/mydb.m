@@ -301,7 +301,7 @@ mydb *sharedInstance;
 
 #pragma mark - content text
 //新增內容
-- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no{
+- (void)insertMemeberNo:(NSString *)memberId andcontenttext:(NSString *)Contenttext andlevel:(NSString *)level anddate:(NSDate *)date andcontentno:(NSString *)content_no andimage:(NSData *)imagedata{
     
    
     
@@ -382,7 +382,6 @@ mydb *sharedInstance;
     //產生hud物件，並設定其顯示文字
     
     
-    
     NSLog(@"params:%@",params);
     
     NSLog(@"id=========:%@",params[@"userID"]);
@@ -390,17 +389,25 @@ mydb *sharedInstance;
     //產生控制request的物件
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//  manager.responseSerializer = [AFImageResponseSerializer serializer];
+   //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
+   manager.responseSerializer.acceptableContentTypes =     [NSSet setWithObjects:@"*/*", nil];
     //以POST的方式request並
     [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //request成功之後要做的事情
         
+        
+        NSLog(@" responseObject%@", responseObject);
+        
         NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
       
         NSString *result = [apiResponse objectForKey:@"queryindexcontentresult"];
-   
+        NSLog(@"api:%@",apiResponse);
+        NSLog(@"result:%@",result);
+        
 
+        
         //   判斷signUp的key值是否等於success
         if ([result isEqualToString:@"success"]) {
             
@@ -413,10 +420,12 @@ mydb *sharedInstance;
            
                 
                 NSLog(@"DICT-content_no:%@",dict[@"content_no"]);
+            
                 [self insertMysqlContent:dict];
                 
                 
                 [self Searchcontentno:dict[@"content_no"]];
+                 
             }
             
             
@@ -435,6 +444,88 @@ mydb *sharedInstance;
    
     
 }
+
+-(void)test:(NSString*)beeid{
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"queryindexcontent",@"cmd", beeid, @"userID", nil];
+    
+    //產生hud物件，並設定其顯示文字
+    
+    
+    NSLog(@"params:%@",params);
+    
+    NSLog(@"id=========:%@",params[@"userID"]);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+   //    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//      manager.responseSerializer = [AFImageResponseSerializer serializer];
+   // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+   // manager.responseSerializer.acceptableContentTypes =     [NSSet setWithObjects:@"*/*", nil];
+    //以POST的方式request並
+
+    
+    
+    [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        
+        NSLog(@" responseObject-------------:%@", responseObject);
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+////        
+//        NSString *result = [apiResponse objectForKey:@"queryindexcontentresult"];
+//        NSLog(@"api:%@",apiResponse);
+//        NSLog(@"result:%@",result);
+        
+        NSData *imageData =[apiResponse objectForKey:@"queryindexcontent"];
+        NSData *data = [[NSData alloc]initWithBase64EncodedString:[apiResponse objectForKey:@"queryindexcontent"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        NSLog(@"imagedata:%@",data);
+        
+        //   判斷signUp的key值是否等於success
+//        if ([result isEqualToString:@"success"]) {
+//            
+//            
+//            NSMutableArray *data = [apiResponse objectForKey:@"queryindexcontent"];
+//            
+//            NSLog(@"index content:%@",data);
+//            
+//            for (NSDictionary *dict in data) {
+//                
+//                
+//                NSLog(@"DICT-content_no:%@",dict[@"content_no"]);
+//                
+//                [self insertMysqlContent:dict];
+//                
+//                
+//                [self Searchcontentno:dict[@"content_no"]];
+//                
+//            }
+//            
+//            
+//            NSLog(@"success");
+//        }else {
+//            
+//            NSLog(@"no suceess");
+//            
+//        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+        
+    }];
+
+
+
+
+
+
+
+
+}
+
+
 //serach content_no insert reply to sqlite
 -(void)Searchcontentno:(NSString *)content_no{
     
@@ -584,7 +675,14 @@ mydb *sharedInstance;
     //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
+    
+    
+    
+    
+    
+    
     //以POST的方式request並
+    
     [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //request成功之後要做的事情
         
@@ -617,6 +715,68 @@ mydb *sharedInstance;
     }];
     
 }
+//insertcontentwithimage remote
+-(void)insertcontentremotewithimage:(NSDictionary *)params{
+    
+    
+    
+    //設定要POST的鍵值
+    
+    NSLog(@"params:%@",params);
+    
+    NSLog(@"telephone:%@",params[@"userID"]);
+    
+    //產生控制request的物件
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    
+//    AFHTTPRequestOperation *op = [manager POST:@"rest.of.url" parameters:parameters
+    
+    NSData *imageData = params[@"image"];
+    
+    
+    //以POST的方式request並
+  [manager POST:@"http://localhost:8888/beenhere/apiupdate.php" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //do not put image inside parameters dictionary as I did, but append it!
+        [formData appendPartWithFileData:imageData name:@"image" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+      
+    }
+ success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //request成功之後要做的事情
+        
+        NSDictionary *apiResponse = [responseObject objectForKey:@"api"];
+        NSLog(@"apiResponse:%@",apiResponse);
+        // 取的signIn的key值，並輸出
+        NSString *result = [apiResponse objectForKey:@"insertcontent"];
+        NSLog(@"result:%@",result);
+        
+        //   判斷signUp的key值是否等於success
+        if ([result isEqualToString:@"success"]) {
+            
+            //存入mysql後執行搜尋content_no
+           // [self SearchIDcontent:params[@"userID"] ];
+            
+            NSLog(@"success");
+        }else {
+            
+            NSLog(@"no suceess");
+            
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request error:%@",error);
+        
+        
+        
+        
+        
+        
+    }];
+    
+}
+
+
 //新增子回覆內容
 -(void)insertcontentreplyremote:(NSDictionary *)params{
     
@@ -707,7 +867,7 @@ mydb *sharedInstance;
             
           
             //存到SQLITE
-            [self insertMemeberNo:data[@"id"] andcontenttext:data[@"text"] andlevel:@"0" anddate:data[@"date"]  andcontentno:data[@"content_no"]];
+            [self insertMemeberNo:data[@"id"] andcontenttext:data[@"text"] andlevel:@"0" anddate:data[@"date"]  andcontentno:data[@"content_no"] andimage:data[@"image"]];
             
         }else {
             

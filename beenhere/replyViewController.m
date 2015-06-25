@@ -87,7 +87,9 @@ NSString *userID = [[NSUserDefaults standardUserDefaults]stringForKey:@"bhereID"
 
     
     //存入sqlite
-    [[mydb sharedInstance]insertreplyMemeberNo:userID andcontenttext:replytext andlevel:@"1" anddate:[NSDate date] andcontentno:_node .content_no];
+//    [[mydb sharedInstance]insertreplyMemeberNo:userID andcontenttext:replytext andlevel:@"1" anddate:[NSDate date] andcontentno:_node .content_no];
+    
+       [self.navigationController popViewControllerAnimated:YES];
 
 }
 

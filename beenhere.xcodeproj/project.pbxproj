@@ -41,6 +41,8 @@
 		9524980C1B342C7900513EE7 /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 952497FC1B342C7900513EE7 /* RATreeView+TableViewDelegate.m */; };
 		9524980D1B342C7900513EE7 /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952497FE1B342C7900513EE7 /* RATreeView+UIScrollView.m */; };
 		9524980E1B342C7900513EE7 /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952498011B342C7900513EE7 /* RATreeView.m */; };
+		95435A871B3AA412009EAEA4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95435A861B3AA412009EAEA4 /* image.jpg */; };
+		954835871B3AD2BF00689ABE /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 954835861B3AD2BF00689ABE /* beenhere.sqlite */; };
 		955B4C6C1B3475C8007AB049 /* TreeViewNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B4C6B1B3475C8007AB049 /* TreeViewNode.m */; };
 		95606DC01B332A0A00A59D2B /* QuoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95606DBF1B332A0A00A59D2B /* QuoteTableViewCell.m */; };
 		95701EE21B10C9DD00A7CB93 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95701EE11B10C9DD00A7CB93 /* camera.png */; };
@@ -53,7 +55,6 @@
 		957119591B0728CD00F35256 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 957119541B0728CD00F35256 /* FMResultSet.m */; };
 		9571195E1B073FCF00F35256 /* mydb.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571195D1B073FCF00F35256 /* mydb.m */; };
 		957204A01B19A46000189D31 /* setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572049F1B19A46000189D31 /* setting.m */; };
-		9599243E1B39A84E00A70E50 /* beenhere.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9599243D1B39A84E00A70E50 /* beenhere.sqlite */; };
 		959924401B39D59300A70E50 /* gnome_system_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 9599243F1B39D59300A70E50 /* gnome_system_users.png */; };
 		959924421B39D6C600A70E50 /* system_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 959924411B39D6C600A70E50 /* system_users.png */; };
 		959924441B39D9F300A70E50 /* system_user_picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959924431B39D9F300A70E50 /* system_user_picture.jpg */; };
@@ -173,6 +174,8 @@
 		952497FF1B342C7900513EE7 /* RATreeView_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView_ClassExtension.h; sourceTree = "<group>"; };
 		952498001B342C7900513EE7 /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
 		952498011B342C7900513EE7 /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
+		95435A861B3AA412009EAEA4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		954835861B3AD2BF00689ABE /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		955B4C6A1B3475C8007AB049 /* TreeViewNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeViewNode.h; sourceTree = "<group>"; };
 		955B4C6B1B3475C8007AB049 /* TreeViewNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeViewNode.m; sourceTree = "<group>"; };
 		95606DBE1B332A0A00A59D2B /* QuoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteTableViewCell.h; sourceTree = "<group>"; };
@@ -196,7 +199,6 @@
 		9571195D1B073FCF00F35256 /* mydb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mydb.m; sourceTree = "<group>"; };
 		9572049E1B19A46000189D31 /* setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setting.h; sourceTree = "<group>"; };
 		9572049F1B19A46000189D31 /* setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setting.m; sourceTree = "<group>"; };
-		9599243D1B39A84E00A70E50 /* beenhere.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = beenhere.sqlite; sourceTree = "<group>"; };
 		9599243F1B39D59300A70E50 /* gnome_system_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_system_users.png; sourceTree = "<group>"; };
 		959924411B39D6C600A70E50 /* system_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = system_users.png; sourceTree = "<group>"; };
 		959924431B39D9F300A70E50 /* system_user_picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = system_user_picture.jpg; sourceTree = "<group>"; };
@@ -459,7 +461,7 @@
 		95B417421B01EB6A00EA9177 = {
 			isa = PBXGroup;
 			children = (
-				9599243D1B39A84E00A70E50 /* beenhere.sqlite */,
+				954835861B3AD2BF00689ABE /* beenhere.sqlite */,
 				694683391B380BE800ADBAF8 /* CoreLocation.framework */,
 				694683371B380BDE00ADBAF8 /* MapKit.framework */,
 				69657B6E1B37F0EE0060FB67 /* AppleMap */,
@@ -490,6 +492,8 @@
 		95B4174D1B01EB6A00EA9177 /* beenhere */ = {
 			isa = PBXGroup;
 			children = (
+				95435A861B3AA412009EAEA4 /* image.jpg */,
+				95B417581B01EB6A00EA9177 /* Main.storyboard */,
 				955B4C6A1B3475C8007AB049 /* TreeViewNode.h */,
 				955B4C6B1B3475C8007AB049 /* TreeViewNode.m */,
 				95606DBE1B332A0A00A59D2B /* QuoteTableViewCell.h */,
@@ -527,7 +531,6 @@
 				95B417561B01EB6A00EA9177 /* ViewController.m */,
 				95E42AFF1B1A06C8006DCE0D /* AccountTableViewController.h */,
 				95E42B001B1A06C8006DCE0D /* AccountTableViewController.m */,
-				95B417581B01EB6A00EA9177 /* Main.storyboard */,
 				9572049E1B19A46000189D31 /* setting.h */,
 				9572049F1B19A46000189D31 /* setting.m */,
 				95A1D9791B19B2BC0044CE80 /* TableViewController.h */,
@@ -689,7 +692,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */,
-				9599243E1B39A84E00A70E50 /* beenhere.sqlite in Resources */,
 				696CC2081B3A5710005EFCD7 /* pointRed@3x.png in Resources */,
 				95B4175A1B01EB6A00EA9177 /* Main.storyboard in Resources */,
 				95B5F6F51B13054700D7A342 /* hbeenbg.png in Resources */,
@@ -705,8 +707,10 @@
 				95B5F6FD1B130B7B00D7A342 /* beenherebg.png in Resources */,
 				696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */,
 				69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */,
+				95435A871B3AA412009EAEA4 /* image.jpg in Resources */,
 				696CC2071B3A5710005EFCD7 /* pointRed@2x.png in Resources */,
 				95B5F6F31B1303B000D7A342 /* welcome.jpg in Resources */,
+				954835871B3AD2BF00689ABE /* beenhere.sqlite in Resources */,
 				951DA4181B1EFE9D00C7577A /* login.png in Resources */,
 				95B5F7291B131E3C00D7A342 /* ContextMenuCell.xib in Resources */,
 				690D6C1A1B396FCB00DA83E6 /* beenhere.sqlite in Resources */,
