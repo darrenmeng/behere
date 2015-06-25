@@ -236,7 +236,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1i-qo-xkA">
                                 <rect key="frame" x="26" y="28" width="88" height="93"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoto.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LnR-Mc-6Bh">
                                 <rect key="frame" x="28" y="30" width="84" height="89"/>
@@ -248,11 +248,14 @@
                                     <outletCollection property="gestureRecognizers" destination="bsd-jb-ZeE" appends="YES" id="32a-TF-Y5T"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-SV-Vwp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-SV-Vwp">
                                 <rect key="frame" x="554" y="95" width="30" height="30"/>
                                 <state key="normal" title="照相">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goCamera:" destination="mqp-ar-zfE" eventType="touchUpInside" id="ca5-fC-DF9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -261,8 +264,10 @@
                             <constraint firstItem="LnR-Mc-6Bh" firstAttribute="top" secondItem="uEk-P9-N2V" secondAttribute="bottom" constant="30" id="0ho-0R-Y3p"/>
                             <constraint firstItem="dqO-4F-440" firstAttribute="top" secondItem="64D-jh-lNT" secondAttribute="bottom" id="1te-Eg-pDX"/>
                             <constraint firstItem="dqO-4F-440" firstAttribute="top" secondItem="Rd5-G8-1dZ" secondAttribute="bottom" constant="37" id="6ZN-E2-cbl"/>
+                            <constraint firstItem="fx5-SV-Vwp" firstAttribute="trailing" secondItem="Rd5-G8-1dZ" secondAttribute="trailing" id="C9M-Vp-4EQ"/>
                             <constraint firstItem="64D-jh-lNT" firstAttribute="top" secondItem="M1i-qo-xkA" secondAttribute="bottom" constant="28" id="DXV-Pa-Orp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="64D-jh-lNT" secondAttribute="trailing" constant="-16" id="Fjo-cz-9K8"/>
+                            <constraint firstItem="64D-jh-lNT" firstAttribute="top" secondItem="fx5-SV-Vwp" secondAttribute="bottom" constant="24" id="O6S-Yd-aAD"/>
                             <constraint firstItem="Rd5-G8-1dZ" firstAttribute="leading" secondItem="Kmy-yB-A0A" secondAttribute="leadingMargin" id="P81-ho-hdr"/>
                             <constraint firstItem="64D-jh-lNT" firstAttribute="top" secondItem="Kmy-yB-A0A" secondAttribute="top" constant="149" id="Q9t-gh-tVt"/>
                             <constraint firstItem="64D-jh-lNT" firstAttribute="top" secondItem="vdf-OW-fIK" secondAttribute="bottom" constant="8" id="QTs-9C-t4i"/>

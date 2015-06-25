@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 beenhere. All rights reserved.
 //
 
+#import "ROOTViewController.h"
 #import "CameraAppDelegate.h"
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>

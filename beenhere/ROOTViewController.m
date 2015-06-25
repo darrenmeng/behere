@@ -49,6 +49,7 @@ friendTableViewController * frinedview;
 @property (weak, nonatomic) IBOutlet UIButton *SendAction;
 @property (weak, nonatomic) IBOutlet UITextView *TextviewContent;
 
+- (IBAction)goCamera:(id)sender;
 
 @end
 
@@ -635,14 +636,16 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0 ) {
         
-        UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
-//        [self showViewController:cameraVC sender:self];
-        [self presentViewController:cameraVC animated:YES completion:nil];
+         UINavigationController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+        [self showViewController:cameraVC sender:self];
+//        [self showDetailViewController:cameraVC sender:self];
         
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 
 
+}
+- (IBAction)goCamera:(id)sender {
 }
 @end
