@@ -14,11 +14,15 @@
 		694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 694683351B38061E00ADBAF8 /* AppleMapViewController.m */; };
 		694683381B380BDE00ADBAF8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683371B380BDE00ADBAF8 /* MapKit.framework */; };
 		6946833A1B380BE800ADBAF8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694683391B380BE800ADBAF8 /* CoreLocation.framework */; };
+		6963FABB1B3B3509005BD414 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6963FABA1B3B3509005BD414 /* Pin.m */; };
+		6963FABE1B3B3CE9005BD414 /* PinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6963FABD1B3B3CE9005BD414 /* PinDetailViewController.m */; };
 		69657B6D1B37F0E20060FB67 /* AppleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */; };
 		696CC2021B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */; };
 		696CC2061B3A5710005EFCD7 /* pointRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2031B3A570F005EFCD7 /* pointRed.png */; };
 		696CC2071B3A5710005EFCD7 /* pointRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2041B3A570F005EFCD7 /* pointRed@2x.png */; };
 		696CC2081B3A5710005EFCD7 /* pointRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 696CC2051B3A570F005EFCD7 /* pointRed@3x.png */; };
+		696CC20B1B3A6F01005EFCD7 /* PinEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CC20A1B3A6F00005EFCD7 /* PinEditViewController.m */; };
+		696CC20E1B3A8017005EFCD7 /* PinEditToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CC20D1B3A8017005EFCD7 /* PinEditToolViewController.m */; };
 		95016F981B25A50F00BD44C0 /* tool2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F971B25A50F00BD44C0 /* tool2.png */; };
 		95016F9B1B25A7A700BD44C0 /* tool4.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F991B25A7A700BD44C0 /* tool4.png */; };
 		95016F9C1B25A7A700BD44C0 /* tool3.png in Resources */ = {isa = PBXBuildFile; fileRef = 95016F9A1B25A7A700BD44C0 /* tool3.png */; };
@@ -127,11 +131,19 @@
 		694683351B38061E00ADBAF8 /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
 		694683371B380BDE00ADBAF8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		694683391B380BE800ADBAF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6963FAB91B3B3509005BD414 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = AppleMap/Pin.h; sourceTree = "<group>"; };
+		6963FABA1B3B3509005BD414 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = AppleMap/Pin.m; sourceTree = "<group>"; };
+		6963FABC1B3B3CE9005BD414 /* PinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinDetailViewController.h; path = AppleMap/PinDetailViewController.h; sourceTree = "<group>"; };
+		6963FABD1B3B3CE9005BD414 /* PinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinDetailViewController.m; path = AppleMap/PinDetailViewController.m; sourceTree = "<group>"; };
 		69657B6C1B37F0E20060FB67 /* AppleMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleMap.storyboard; sourceTree = "<group>"; };
 		696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pin_V1_20150624.sqlite; sourceTree = "<group>"; };
 		696CC2031B3A570F005EFCD7 /* pointRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointRed.png; sourceTree = "<group>"; };
 		696CC2041B3A570F005EFCD7 /* pointRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@2x.png"; sourceTree = "<group>"; };
 		696CC2051B3A570F005EFCD7 /* pointRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@3x.png"; sourceTree = "<group>"; };
+		696CC2091B3A6F00005EFCD7 /* PinEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinEditViewController.h; path = AppleMap/PinEditViewController.h; sourceTree = "<group>"; };
+		696CC20A1B3A6F00005EFCD7 /* PinEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinEditViewController.m; path = AppleMap/PinEditViewController.m; sourceTree = "<group>"; };
+		696CC20C1B3A8017005EFCD7 /* PinEditToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinEditToolViewController.h; path = AppleMap/PinEditToolViewController.h; sourceTree = "<group>"; };
+		696CC20D1B3A8017005EFCD7 /* PinEditToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinEditToolViewController.m; path = AppleMap/PinEditToolViewController.m; sourceTree = "<group>"; };
 		95016F971B25A50F00BD44C0 /* tool2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool2.png; sourceTree = "<group>"; };
 		95016F991B25A7A700BD44C0 /* tool4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool4.png; sourceTree = "<group>"; };
 		95016F9A1B25A7A700BD44C0 /* tool3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool3.png; sourceTree = "<group>"; };
@@ -327,6 +339,14 @@
 				696CC2041B3A570F005EFCD7 /* pointRed@2x.png */,
 				696CC2051B3A570F005EFCD7 /* pointRed@3x.png */,
 				696CC2011B3A3B9C005EFCD7 /* pin_V1_20150624.sqlite */,
+				696CC2091B3A6F00005EFCD7 /* PinEditViewController.h */,
+				696CC20A1B3A6F00005EFCD7 /* PinEditViewController.m */,
+				696CC20C1B3A8017005EFCD7 /* PinEditToolViewController.h */,
+				696CC20D1B3A8017005EFCD7 /* PinEditToolViewController.m */,
+				6963FAB91B3B3509005BD414 /* Pin.h */,
+				6963FABA1B3B3509005BD414 /* Pin.m */,
+				6963FABC1B3B3CE9005BD414 /* PinDetailViewController.h */,
+				6963FABD1B3B3CE9005BD414 /* PinDetailViewController.m */,
 			);
 			name = AppleMap;
 			sourceTree = "<group>";
@@ -744,6 +764,7 @@
 				95225A731B2EBA3E00BC80DF /* UPStackMenu.m in Sources */,
 				9524980A1B342C7900513EE7 /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				95A259C61B1F4BC7007641B0 /* AFURLConnectionOperation.m in Sources */,
+				6963FABE1B3B3CE9005BD414 /* PinDetailViewController.m in Sources */,
 				9524980D1B342C7900513EE7 /* RATreeView+UIScrollView.m in Sources */,
 				952498091B342C7900513EE7 /* RATreeView+Private.m in Sources */,
 				952498021B342C7900513EE7 /* RABatchChanges.m in Sources */,
@@ -763,6 +784,7 @@
 				694683361B38061E00ADBAF8 /* AppleMapViewController.m in Sources */,
 				95B417541B01EB6A00EA9177 /* AppDelegate.m in Sources */,
 				690D6C0F1B394EFA00DA83E6 /* PinDAO.m in Sources */,
+				696CC20B1B3A6F01005EFCD7 /* PinEditViewController.m in Sources */,
 				95A259D01B1F4BC7007641B0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				95E3C5E41B2CA0B000071387 /* StoreInfo.m in Sources */,
 				95A259C81B1F4BC7007641B0 /* AFURLResponseSerialization.m in Sources */,
@@ -777,12 +799,14 @@
 				9524980B1B342C7900513EE7 /* RATreeView+TableViewDataSource.m in Sources */,
 				95B5F6EB1B12CED600D7A342 /* ROOTViewController.m in Sources */,
 				9571195E1B073FCF00F35256 /* mydb.m in Sources */,
+				6963FABB1B3B3509005BD414 /* Pin.m in Sources */,
 				95A259C41B1F4BC7007641B0 /* AFNetworkReachabilityManager.m in Sources */,
 				957119571B0728CD00F35256 /* FMDatabasePool.m in Sources */,
 				95B5F6EF1B12EE9A00D7A342 /* CustomIOSAlertView.m in Sources */,
 				95A259CA1B1F4BC7007641B0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95B5F7231B131C9500D7A342 /* YALContextMenuTableView.m in Sources */,
 				95606DC01B332A0A00A59D2B /* QuoteTableViewCell.m in Sources */,
+				696CC20E1B3A8017005EFCD7 /* PinEditToolViewController.m in Sources */,
 				9524980E1B342C7900513EE7 /* RATreeView.m in Sources */,
 				952498041B342C7900513EE7 /* RATreeNodeCollectionController.m in Sources */,
 				955B4C6C1B3475C8007AB049 /* TreeViewNode.m in Sources */,
