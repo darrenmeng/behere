@@ -16,5 +16,6 @@
 }
 - (IBAction)friendrequestcount:(id)sender;
 
+- (IBAction)tap:(id)sender;
 
 @end

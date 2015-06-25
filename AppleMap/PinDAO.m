@@ -7,6 +7,7 @@
 //
 
 #import "PinDAO.h"
+#import "Pin.h"
 
 FMDatabase *sqlDB;
 
@@ -37,9 +38,11 @@ FMDatabase *sqlDB;
     //上次發生錯誤，是sqlite的fileName打錯
     FMResultSet *resultSet;
     resultSet = [sqlDB executeQuery:@"select * from pins"];
+    
     if ([sqlDB hadError]) {
         NSLog(@"DB Error %d: %@", [sqlDB lastErrorCode], [sqlDB lastErrorMessage]);
     }
+    
     while ([resultSet next]) {
         [rows addObject:resultSet.resultDictionary];
         NSLog(@"resultDictionary: %@", resultSet.resultDictionary);
@@ -49,35 +52,37 @@ FMDatabase *sqlDB;
     return rows;
 }
 
-/*
+
  //新增功能
- - (void) insertRecordIntoSQLite: (NSDictionary *)record{
+ - (void) insertRecordIntoSQLite: (Pin *)pin {
  
- //如果新增記錄錯誤，就秀錯誤訊息
- if (![FMDB executeUpdate:@"insert into pins (pin_title, pin_latitude, pin_longitude) values (?, ?, ?)", record[@"pin_title"], record[@"pin_latitude"], record[@"pin_longitude"]]) {
- //去executeUpdate看說明，裡面會提到lastErrorMessage
- NSLog(@"Could not insert record: %@", [FMDB lastErrorMessage]);
- };
+     //如果新增記錄錯誤，就秀錯誤訊息
+     if (![sqlDB executeUpdate:@"insert into pins (pin_title, pin_latitude, pin_longitude) values (?, ?, ?)", pin.title, pin.coordinate.latitude, pin.coordinate.longitude]) {
+         
+         //去executeUpdate看說明，裡面會提到lastErrorMessage
+         NSLog(@"Could not insert record: %@", [sqlDB lastErrorMessage]);
+     };
  
  }
  
- 
- //刪除功能
- - (void) deleteRecordFromSQLite:(NSString *)recordId{
- if (![FMDB executeUpdate:@"delete from pins where pin_id=?",recordId]) {
- NSLog(@"Could not delete record: %@", [FMDB lastErrorMessage]);
+
+//刪除功能
+ - (void) deleteRecordFromSQLite:(NSInteger *)pinId {
+     if (![sqlDB executeUpdate:@"delete from pins where pin_id=?", pinId]) {
+     
+         NSLog(@"Could not delete record: %@", [sqlDB lastErrorMessage]);
+     }
  }
- }
  
- 
- 
+
  //修改功能
- - (void) updateRecordFromSQLite:(NSDictionary *)record{
- if(![FMDB executeUpdate:@"update pins set pin_title=?, pin_latitude=?, pin_longitude=? where pin_id=?",record[@"pin_title"], record[@"pin_latitude"], record[@"pin_longitude"], record[@"pin_id"]])
- {
- NSLog(@"Could not update record: %@", [FMDB lastErrorMessage]);
+- (void) updateRecordFromSQLite:(NSInteger *)pinId setTitle:(NSString *) title{
+     if(![sqlDB executeUpdate:@"update pins set pin_title=? where pin_id=?", title, pinId]) {
+     
+         NSLog(@"Could not update record: %@", [sqlDB lastErrorMessage]);
+     }
+     
  }
- }
- */
+
 
 @end

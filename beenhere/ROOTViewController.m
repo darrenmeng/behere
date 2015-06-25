@@ -14,6 +14,7 @@
 #import "friendTableViewController.h"
 #import "StoreInfo.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CameraViewController.h"
 
 
 
@@ -24,8 +25,9 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 <
 UITableViewDelegate,
 UITableViewDataSource,
-YALContextMenuTableViewDelegate
-,UITextViewDelegate
+YALContextMenuTableViewDelegate,
+UITextViewDelegate,
+UIActionSheetDelegate
 >
 {
 friendTableViewController * frinedview;
@@ -47,6 +49,7 @@ friendTableViewController * frinedview;
 @property (weak, nonatomic) IBOutlet UIButton *SendAction;
 @property (weak, nonatomic) IBOutlet UITextView *TextviewContent;
 
+- (IBAction)goCamera:(id)sender;
 
 @end
 
@@ -528,6 +531,7 @@ friendTableViewController * frinedview;
 
 }
 
+
 - (void)setStackIconClosed:(BOOL)closed
 {
     UIImageView *icon = [[contentView subviews] objectAtIndex:0];
@@ -609,7 +613,42 @@ friendTableViewController * frinedview;
     
 }
 
+// 點擊大頭照跳出選項
+- (void)handleTap:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+    }
+}
+
+// 點擊大頭照更換照片
+- (IBAction)tap:(id)sender {
+    NSString *aboutString = @"更新大頭貼照";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:aboutString
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"取消"
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:@"拍照", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0 ) {
+    
+         UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+        [self presentViewController:cameraVC animated:YES completion:NULL];
+        
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 
 
+}
 
+- (IBAction)goCamera:(id)sender {
+    UIViewController *cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cameraview"];
+    [self presentViewController:cameraVC animated:YES completion:NULL];
+    
+}
 @end
